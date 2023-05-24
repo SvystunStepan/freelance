@@ -49,6 +49,8 @@ gulp.task('js_v', async function() {
     gulp.src([
             'src/js/vendor/jquery-3.6.3.min.js',
             'src/js/vendor/inputmask.js',
+            'src/js/vendor/slick.min.js',
+            'src/js/vendor/jquery.fancybox.min.js',
         ])
         .pipe(concat('vendor.js'))
         .pipe(uglify())
