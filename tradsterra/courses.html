@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="ru"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Tradsterra - это не трудно</title>
+
+    <style type="text/css">
+        q{quotes:none;}
+        q:before{content:''}
+        q:after{content:''}
+        #wrapper{
+            width:100%;
+            overflow:hidden;
+            padding:50px 0;
+        }
+
+        .order-block{
+            width: 440px;
+            border: 4px dashed #FCCA49;
+            border-radius: 30px;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+            overflow: hidden;
+            color: #ffffff;
+
+        }
+        .order-block:after{
+            display:block;
+            clear:both;
+            content:'';
+        }
+        .decoration{
+            background:url(order-page-decoration.png) no-repeat;
+            width:24px;
+            height:32px;
+            position:absolute;
+            left:-23px;
+            top:336px;
+        }
+        .order-block .text-holder{
+            padding: 20px;
+        }
+        .order-block h2{
+            font:35px/35px "Lobster", Arial, Helvetica, sans-serif;
+            margin:0 0 59px;
+            color: #ffe19e;
+        }
+        .order-block h2 span{
+            display:block;
+            font-size:45px;
+            line-height:45px;
+            color:#fcca49;
+            margin:0 0 -2px;
+        }
+        .order-block p{margin:0 0 18px;}
+        .order-block .text-box{
+            bottom: 20px;
+            font-size: 20px;
+            line-height: 30px;
+            color: #1f242a;
+            left: 3px;
+            width: 100%;
+            box-sizing: border-box;
+            background: #FCCA49;
+            padding: 20px;
+        }
+        .order-block .text-box h2{
+            font-size:35px;
+            line-height:40px;
+            color:#1f242a;
+            margin:0 0 32px;
+        }
+        .order-block .text-box h2 span{
+            font-size:45px;
+            line-height:45px;
+            color:#ae1d1d;
+            display:block;
+            margin:-6px 0 0;
+        }
+        .order-form{
+            overflow:hidden;
+        }
+        .order-form .text{
+            background:url(bg-order-page-text.png) no-repeat;
+            width:253px;
+            height:42px;
+            float:left;
+        }
+        .order-block .text-box p{
+            margin:0 0 18px;
+        }
+        .order-form .text input{
+            background:none;
+            border:none;
+            width:227px;
+            height:40px;
+            float:left;
+            font-size:16px;
+            line-height:40px;
+            color:#726033;
+            padding:10px 13px 12px;
+        }
+        .btn-save{
+            border:none;
+            background:url(order-page-btn-save.png) no-repeat;
+            width:129px;
+            height:40px;
+            float:right;
+            font: 20px/40px "Roboto Condensed", Arial, Helvetica, sans-serif;
+            text-transform:uppercase;
+            color:#fff;
+            float:right;
+            padding:0 0 2px;
+            margin:0;
+            cursor:pointer;
+        }/* Chart.js */
+        #wrapper {
+            background: #343442;
+        }
+        .pdf {
+            margin-top: 30px;
+        }
+        .btn {
+            display: none;
+        }
+        @media screen and (max-width:1024px) {
+            .pdf {
+                display: none;
+            }
+            .order-block {
+                width: 100%;
+            }
+            .btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="adv" style="">
+            <span></span>
+            <span>
+                Advertisement
+            </span>
+            <span>
+                <a href="https://tradsterra.com/disclaimer.html">Disclaimer</a>
+            </span>
+        </div>
+        <div class="bg-grey" id="wrapper">
+            <div class="container">
+                <span class="decoration"></span>
+                <div class="order-block">
+                    <div class="text-holder">
+                        <h2><span>Поздравляем!</span> Теперь вы получили доступ к Основам Торговли.</h2>
+                        <p>В ближайшее время с вами свяжется консультант для предоставления всего Курса.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="how-it-works pt-5 pb-5 text-center">
+            <div class="container">
+                <h2>Основы трейдинга</h2>
+                <div>
+                    <a href="https://tradsterra.com/files/first.pdf" class="btn btn-success text-center text-white">Загрузить</a>
+                    <embed class="pdf" src="https://tradsterra.com/files/first.pdf" width="100%" height="900px" type="application/pdf">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark pb-3 pt-3">
+        <div class="container">
+            <div class="contacts" style="padding-top:30px">
+                <div>
+                    <p class="text-white text-center">Contacts:</p>
+                    <p class="text-white text-center">
+                        Private company, incorporated under the laws of the Republic of Cyprus,
+                        with registration number HE 334906/ 50925
+                        and having its registered office at Strovolou, 145Β, Strovolos, 2042, Nicosia, Cyprus.
+                        Strovolos Avenue 145A,
+                        Strovolos, 2042, Nicosia, Cyprus</p>
+                </div>
+
+                <div>
+                    <div class="text-white text-center">* Рекламируемый продукт является бесплатным курсом по трейдингу.
+                        Торговля на финансовых рынках представляет собой высокорисковую деятельность. Перед принятием решения о торговле необходимо учитывать индивидуальные цели, опыт и уровень риска.
+                        Tradsterra не несет ответственности за возможные убытки или повреждения, возникшие в результате принятия решений, основанных на информации, представленной нашим курсом.</div>
+                </div>
+            </div>
+
+            <p class="text-white text-center"><a href="https://tradsterra.com/terms.pdf" class="text-white">Terms and Conditions</a> / <a href="https://tradsterra.com/policy.html" class="text-white">Privacy Policy</a></p>
+
+            <p class="text-white text-center"><small>Copyright © 2023</small></p>
+        </div>
+    </footer>
+    <script src="js/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body></html>

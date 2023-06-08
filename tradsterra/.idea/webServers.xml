@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3cd92c58-9efe-4f01-aee6-3d62a5b3276c" name="prod">
+        <fileTransfer rootFolder="/home/forge/tradsterra.com" accessType="SFTP" host="91.201.202.133" port="22" sshConfigId="d8c20559-73d2-4850-9205-e4758062c092" sshConfig="dump@ocean" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
