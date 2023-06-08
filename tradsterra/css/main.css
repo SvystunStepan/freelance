@@ -6109,17 +6109,17 @@ a:hover {
       font-size: 40px;
     }
   }
-.title-block {
-    position: relative;
-    z-index: 2;
-    font-family: "ZonaPro-Bold", sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    color: #fff;
-    display: block;
-}
-  .block {
+    .title-block {
+        position: relative;
+        z-index: 2;
+        font-family: "ZonaPro-Bold", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+        display: block;
+    }
+    .block {
       display: flex;
       align-items: center;
       justify-content: center;
