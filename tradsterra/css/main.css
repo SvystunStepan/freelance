@@ -6217,46 +6217,6 @@ a:hover {
         height: 100%;
         background-color: #00000047;
     }
-    input::placeholder {
-        color: #fff; 
-    }
-    input {
-        color: #fff;
-    }
-    
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus {
-        -webkit-text-fill-color: #fff;
-        -webkit-box-shadow: 0 0 0 40rem #1e1e1e inset;
-    }
-    .consult-form {
-        display: flex;
-        flex-direction: column;
-        gap: 45px;
-    }
-    .consult-form input {
-        background-color: #0000008c;
-        height: 50px;
-        border-radius: 15px;
-        border: 1px solid lightseagreen;
-        padding-left: 25px;
-    }
-    .consult-btn {
-        height: 45px;
-        border-radius: 15px;
-        color: #fff;
-        font-weight: 700;
-        background-color: #FF6A70;
-        border: none;
-        transition: all .3s ease;
-        font-size: 20px;
-        transition: transform 0.2s;
-    }
-    .consult-btn:hover {
-        background-color: #d12f34;
-        transform: scale(0.97); 
-    }
     .hero h1,
     .hero .h1 {
         max-width: 600px;
