@@ -66,6 +66,38 @@ $( document ).ready(function() {
     });
   }
 
+  function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  }
+  
+  if (isMobileDevice()) {
+    var button = document.querySelector('.fixed-button');
+    var buttonPosition = button.offsetTop;
+  
+    window.addEventListener('scroll', function() {
+      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  
+      if (scrollPosition > buttonPosition) {
+        button.classList.add('fixed');
+      } else {
+        button.classList.remove('fixed');
+      }
+    });
+  }
+  
+
+
+ /*  window.addEventListener('scroll', function() {
+    var button = document.querySelector('.fixed-btn');
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  
+    if (scrollPosition > 0) {
+      button.classList.add('scrolled');
+    } else {
+      button.classList.remove('scrolled');
+    }
+  }); */
+
  /*  $('.one-time').slick({
     dots: true,
     infinite: true,
