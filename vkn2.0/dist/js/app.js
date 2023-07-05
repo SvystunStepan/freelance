@@ -72,9 +72,11 @@ $( document ).ready(function() {
     var scrollY = window.scrollY;
   
     if (scrollY > 0) {
-      button.style.bottom = '20px'; /* Встановіть бажану нову вертикальну позицію */
+      button.style.top = 'auto';
+      button.style.bottom = '20px';
     } else {
-      button.style.bottom = '130px'; /* Поверніть кнопку на початкову позицію */
+      button.style.top = '440px';
+      button.style.bottom = 'auto';
     }
   });
   
