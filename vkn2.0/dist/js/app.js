@@ -65,46 +65,20 @@ $( document ).ready(function() {
       adaptiveHeight: true
     });
   }
-
-  function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-  }
-  
-  if (isMobileDevice()) {
-    var button = document.querySelector('.fixed-button');
-    var buttonPosition = button.offsetTop;
-  
-    window.addEventListener('scroll', function() {
-      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-  
-      if (scrollPosition > buttonPosition) {
-        button.classList.add('fixed');
-      } else {
-        button.classList.remove('fixed');
-      }
-    });
-  }
   
 
-
- /*  window.addEventListener('scroll', function() {
-    var button = document.querySelector('.fixed-btn');
-    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  window.addEventListener('scroll', function() {
+    var button = document.querySelector('.floating-button');
+    var scrollY = window.scrollY;
   
-    if (scrollPosition > 0) {
-      button.classList.add('scrolled');
+    if (scrollY > 0) {
+      button.style.bottom = '20px'; /* Встановіть бажану нову вертикальну позицію */
     } else {
-      button.classList.remove('scrolled');
+      button.style.bottom = '130px'; /* Поверніть кнопку на початкову позицію */
     }
-  }); */
+  });
+  
 
- /*  $('.one-time').slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true
-  }); */
 
 
   /* $(window).scroll(function () {
