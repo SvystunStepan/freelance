@@ -14,24 +14,57 @@ $( document ).ready(function() {
     dots: false,
     arrows: true,
     speed: 3000,
-    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
-    adaptiveHeight: true
+    // adaptiveHeight: true,
+    slidesToShow: 3,
+    responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
+      }]
   });
 
   $('#slider3').slick({
     dots: false,
-    arrows: true,
     speed: 1000,
     slidesToShow: 1,
     // slidesToScroll: 1,
     // autoplay: true,
     // autoplaySpeed: 5000,
-    adaptiveHeight: true
+    // adaptiveHeight: true
+    arrows: true,
+    responsive: [{
+      breakpoint: 768, 
+      settings: {
+        arrows: false,
+        dots: true
+      }
+    }]
   });
 
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    $('#slider4').slick({
+      dots: true,
+      arrows: false,
+      speed: 2000,
+      slidesToShow: 1,
+      // autoplay: true,
+      // autoplaySpeed: 5000,
+      adaptiveHeight: true
+    });
+    $('#slider5').slick({
+      dots: true,
+      arrows: false,
+      speed: 2000,
+      slidesToShow: 1,
+      // autoplay: true,
+      // autoplaySpeed: 5000,
+      adaptiveHeight: true
+    });
+  }
 
  /*  $('.one-time').slick({
     dots: true,
