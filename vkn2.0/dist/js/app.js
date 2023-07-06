@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  
+
   // Scroll
   $('.scroll').click(function (e) {
     event.preventDefault();
@@ -59,6 +59,7 @@ $( document ).ready(function() {
     }]
   });
 
+
   
   if (window.matchMedia("(max-width: 768px)").matches) {
     
@@ -103,6 +104,10 @@ $( document ).ready(function() {
     });
   }
   
+
+ 
+
+
   /* if (/Mobi|Android/i.test(navigator.userAgent)) {
     // Код, який виконується на мобільних пристроях
   } else {

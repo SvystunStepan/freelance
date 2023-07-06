@@ -37,6 +37,7 @@
     "sass": "^1.49.8"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "gulp-webserver": "^0.9.1"
   }
 }
