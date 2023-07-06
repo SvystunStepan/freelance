@@ -1,5 +1,18 @@
 $( document ).ready(function() {
   
+  // Scroll
+  $('.scroll').click(function (e) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+      top = $(id).offset().top;
+  
+    $('body,html').animate({
+      scrollTop: top - 0
+    }, 1500);
+  });
+
+
+  //головний слайдер фото
   $('#slider1').slick({
     dots: true,
     arrows: false,
@@ -10,6 +23,7 @@ $( document ).ready(function() {
     // adaptiveHeight: true
   });
 
+  //слайдер телеканали
   $('#slider2').slick({
     dots: false,
     arrows: true,
@@ -17,7 +31,6 @@ $( document ).ready(function() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
-    // adaptiveHeight: true,
     slidesToShow: 3,
     responsive: [{
         breakpoint: 768,
@@ -27,6 +40,7 @@ $( document ).ready(function() {
       }]
   });
 
+  //слайдер відгуків
   $('#slider3').slick({
     dots: false,
     speed: 1000,
@@ -45,16 +59,10 @@ $( document ).ready(function() {
     }]
   });
 
-
-
-  /* if (/Mobi|Android/i.test(navigator.userAgent)) {
-    // Код, який виконується на мобільних пристроях
-  } else {
-    // Код, який виконується на інших пристроях
-  } */
   
   if (window.matchMedia("(max-width: 768px)").matches) {
     
+    //сдайдер модулів
     $('#slider4').slick({
       dots: true,
       arrows: false,
@@ -65,6 +73,7 @@ $( document ).ready(function() {
       adaptiveHeight: true
     });
 
+    //сдайдер бонусів
     $('#slider5').slick({
       dots: true,
       arrows: false,
@@ -75,6 +84,7 @@ $( document ).ready(function() {
       adaptiveHeight: true
     });
 
+    //фіксована кнопка мобіла 
     window.addEventListener('scroll', function() {
       var a = document.querySelector('.floating-button');
       var scrollY = window.scrollY;
@@ -93,23 +103,11 @@ $( document ).ready(function() {
     });
   }
   
-
-  
-
-
-  
-  // Scroll
-  $('.scroll').click(function (e) {
-    event.preventDefault();
-    var id = $(this).attr('href'),
-      top = $(id).offset().top;
-  
-    $('body,html').animate({
-      scrollTop: top - 0
-    }, 1500);
-  });
-  
-
+  /* if (/Mobi|Android/i.test(navigator.userAgent)) {
+    // Код, який виконується на мобільних пристроях
+  } else {
+    // Код, який виконується на інших пристроях
+  } */
 }) 
 
 
