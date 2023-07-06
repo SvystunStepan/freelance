@@ -6,8 +6,8 @@ $( document ).ready(function() {
     speed: 2000,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
-    adaptiveHeight: true
+    autoplaySpeed: 5000
+    // adaptiveHeight: true
   });
 
   $('#slider2').slick({
@@ -45,6 +45,14 @@ $( document ).ready(function() {
     }]
   });
 
+
+
+  /* if (/Mobi|Android/i.test(navigator.userAgent)) {
+    // Код, який виконується на мобільних пристроях
+  } else {
+    // Код, який виконується на інших пристроях
+  } */
+  
   if (window.matchMedia("(max-width: 768px)").matches) {
     
     $('#slider4').slick({
@@ -79,7 +87,7 @@ $( document ).ready(function() {
         a.style.top = 'auto';
         a.style.bottom = '20px';
       } else {
-        a.style.top = '440px';
+        a.style.top = '420px';
         a.style.bottom = 'auto';
       }
     });
