@@ -7,7 +7,7 @@ $( document ).ready(function() {
       top = $(id).offset().top;
   
     $('body,html').animate({
-      scrollTop: top - 0
+      scrollTop: top - -20
     }, 1500);
   });
 
@@ -30,7 +30,7 @@ $( document ).ready(function() {
     speed: 3000,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     slidesToShow: 3,
     responsive: [{
         breakpoint: 768,
@@ -67,7 +67,7 @@ $( document ).ready(function() {
     $('#slider4').slick({
       dots: true,
       arrows: false,
-      speed: 2000,
+      speed: 1000,
       slidesToShow: 1,
       // autoplay: true,
       // autoplaySpeed: 5000,
@@ -78,7 +78,7 @@ $( document ).ready(function() {
     $('#slider5').slick({
       dots: true,
       arrows: false,
-      speed: 2000,
+      speed: 1000,
       slidesToShow: 1,
       // autoplay: true,
       // autoplaySpeed: 5000,
@@ -88,25 +88,30 @@ $( document ).ready(function() {
     //фіксована кнопка мобіла 
     window.addEventListener('scroll', function() {
       var a = document.querySelector('.floating-button');
+      var priceBlock = document.getElementById('price');
       var scrollY = window.scrollY;
-    
-      a.addEventListener('click', function() {
-        a.style.display = 'none';
-      });
+      var priceBlockTop = priceBlock.offsetTop;
+      var priceBlockHeight = priceBlock.offsetHeight;
+      var priceBlockBottom = priceBlockTop + priceBlockHeight;
       
       if (scrollY > 0) {
         a.style.top = 'auto';
         a.style.bottom = '20px';
       } else {
-        a.style.top = '420px';
+        a.style.top = '450px';
         a.style.bottom = 'auto';
       }
+      //зникає при знаходженні на блоці "price"
+      if (scrollY > priceBlockTop && scrollY < priceBlockBottom) {
+        a.style.display = 'none';
+      } else {
+        a.style.display = 'block';
+      }
+
     });
+
   }
   
-
- 
-
 
   /* if (/Mobi|Android/i.test(navigator.userAgent)) {
     // Код, який виконується на мобільних пристроях
