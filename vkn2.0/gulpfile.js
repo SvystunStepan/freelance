@@ -48,7 +48,6 @@ gulp.task('js', async function() {
 gulp.task('js_v', async function() {
     gulp.src([
             'src/js/vendor/jquery-3.6.3.min.js',
-            // 'src/js/vendor/aos.js',
             'src/js/vendor/slick.js'
         ])
         .pipe(concat('vendor.js'))
