@@ -70,12 +70,6 @@ $( document ).ready(function() {
     });
   // }
 
-
-
-
-
-
-
   // Scroll
   $('.scroll').click(function (e) {
     event.preventDefault();
