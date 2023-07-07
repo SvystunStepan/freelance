@@ -133,7 +133,7 @@ $( document ).ready(function() {
     $('#slider4').slick({
       dots: true,
       arrows: false,
-      speed: 1000,
+      speed: 500,
       slidesToShow: 1,
       // autoplay: true,
       // autoplaySpeed: 5000,
@@ -144,7 +144,7 @@ $( document ).ready(function() {
     $('#slider5').slick({
       dots: true,
       arrows: false,
-      speed: 1000,
+      speed: 500,
       slidesToShow: 1,
       // autoplay: true,
       // autoplaySpeed: 5000,
