@@ -15,59 +15,66 @@ $( document ).ready(function() {
       classToAdd: 'visible animated pulse', // Class to add to the elements when they are visible
       offset: "10%"
     }); */
+    $('.head .container').addClass("hidden_animation").viewportChecker({
+      classToAdd: 'visible animated slideInUp', 
+      offset: 0
+    });
+  }
     $('.right').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated fadeInRight', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated fadeInRight', 
       offset: '0%'
     });
     $('.left').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated fadeInLeft', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated fadeInLeft', 
       offset: '0%'
     });
     $('.up').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated fadeInUp', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated fadeInUp', 
       offset: '30%'
     });
     $('.down').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated fadeInDown', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated fadeInDown', 
       offset: '30%'
     });
     $('.in').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated fadeIn', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated fadeIn', 
       offset: '30%'
     });
     $('.bounce-in').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated bounceIn', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated bounceIn', 
       offset: '30%'
     });
     $('.bounce-left').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated bounceInLeft', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated bounceInLeft', 
       offset: '30%'
     });
     $('.bounce-right').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated bounceInRight', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated bounceInRight', 
       offset: '30%'
     });
     $('.bounce-up').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated bounceInUp', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated bounceInUp', 
       offset: '30%'
     });
     $('.bounce-down').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated bounceInDown', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated bounceInDown', 
       offset: '30%'
     });
-    $('.head .container').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated slideInUp', // Class to add to the elements when they are visible
-      offset: 0
-    });
     $('.speaker-img').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated zoomIn', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated zoomIn', 
       offset: '0%'
     });
     $('.bottom-info').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated rotateIn', // Class to add to the elements when they are visible
+      classToAdd: 'visible animated rotateIn', 
       offset: '30%'
     });
-  }
+  // }
+
+
+
+
+
+
 
   // Scroll
   $('.scroll').click(function (e) {
