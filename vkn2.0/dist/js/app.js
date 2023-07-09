@@ -123,6 +123,7 @@ $( document ).ready(function() {
     responsive: [{
       breakpoint: 768,
       settings: {
+        speed: 500,
         arrows: false
       }
     }]
