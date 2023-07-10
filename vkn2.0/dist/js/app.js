@@ -69,6 +69,44 @@ $( document ).ready(function() {
       offset: '30%'
     });
   // }
+  //=====================
+
+   //фіксована кнопка desctop 
+   window.addEventListener('scroll', function() {
+    var a = document.querySelector('.banner-float-btn');
+    var priceBlock = document.getElementById('price');
+    var bannerBlock = document.getElementById('banner');
+    var scrollY = window.scrollY;
+    var priceBlockTop = priceBlock.offsetTop;
+    var priceBlockHeight = priceBlock.offsetHeight;
+    var priceBlockBottom = priceBlockTop + priceBlockHeight;
+    var bannerBlockTop = bannerBlock.offsetTop;
+    var bannerBlockHeight = bannerBlock.offsetHeight;
+    var bannerBlockBottom = bannerBlockTop + bannerBlockHeight;
+    
+    //стає на місце при знаходженні на блоці "banner"
+    if (scrollY < bannerBlockBottom) {
+      a.style.position = 'static';
+      a.style.bottom = '0px';
+      a.style.left = '0';
+      a.style.transform = 'translateX(0%)';
+    } else {
+      a.style.position = 'fixed';
+      a.style.top = 'auto';
+      a.style.bottom = '20px';
+      a.style.left = '50%';
+      a.style.transform = 'translateX(-50%)';
+    }
+
+    //зникає при знаходженні на блоці "price"
+    if (scrollY > priceBlockTop && scrollY < priceBlockBottom) {
+      a.style.display = 'none';
+    } else {
+      a.style.display = 'block';
+    }
+  });
+  //=====================
+
 
   // Scroll
   $('.scroll').click(function (e) {
@@ -80,6 +118,7 @@ $( document ).ready(function() {
       scrollTop: top - -20
     }, 1500);
   });
+  //=====================
 
 
   //головний слайдер фото
@@ -89,9 +128,10 @@ $( document ).ready(function() {
     speed: 2000,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 5000
-    // adaptiveHeight: true
+    autoplaySpeed: 3000
   });
+  //=====================
+
 
   //слайдер телеканали
   $('#slider2').slick({
@@ -109,6 +149,8 @@ $( document ).ready(function() {
         }
       }]
   });
+  //=====================
+
 
   //слайдер відгуків
   $('#slider3').slick({
@@ -118,19 +160,51 @@ $( document ).ready(function() {
     // slidesToScroll: 1,
     // autoplay: true,
     // autoplaySpeed: 5000,
-    // adaptiveHeight: true
+    adaptiveHeight: true,
     arrows: true,
     responsive: [{
       breakpoint: 768,
       settings: {
         speed: 500,
-        arrows: false
+        arrows: false,
       }
     }]
   });
+  //=====================
+
 
   if (window.matchMedia("(max-width: 768px)").matches) {
-    //сдайдер модулів
+      //фіксована кнопка мобіла 
+     /*window.addEventListener('scroll', function() {
+      var a = document.querySelector('.floating-button');
+      var headerImg = document.querySelector('.header-img');
+      var priceBlock = document.getElementById('price');
+      var scrollY = window.scrollY;
+      var priceBlockTop = priceBlock.offsetTop;
+      var priceBlockHeight = priceBlock.offsetHeight;
+      var priceBlockBottom = priceBlockTop + priceBlockHeight;
+      
+      if (scrollY > 0) {
+        a.style.top = 'auto';
+        a.style.bottom = '20px';
+        a.style.position = 'fixed';
+
+      } else {
+        a.style.position = 'relative';
+        headerImg.style.marginTop = '0';
+        // a.style.top = '450px';
+        // a.style.bottom = 'auto';
+      }
+      //зникає при знаходженні на блоці "price"
+      if (scrollY > priceBlockTop && scrollY < priceBlockBottom) {
+        a.style.display = 'none';
+      } else {
+        a.style.display = 'block';
+      }
+
+    }); */
+    
+    /* //сдайдер модулів
     $('#slider4').slick({
       dots: true,
       arrows: false,
@@ -150,32 +224,9 @@ $( document ).ready(function() {
       // autoplay: true,
       // autoplaySpeed: 5000,
       adaptiveHeight: true
-    });
+    }); */
 
-    //фіксована кнопка мобіла 
-    window.addEventListener('scroll', function() {
-      var a = document.querySelector('.floating-button');
-      var priceBlock = document.getElementById('price');
-      var scrollY = window.scrollY;
-      var priceBlockTop = priceBlock.offsetTop;
-      var priceBlockHeight = priceBlock.offsetHeight;
-      var priceBlockBottom = priceBlockTop + priceBlockHeight;
-      
-      if (scrollY > 0) {
-        a.style.top = 'auto';
-        a.style.bottom = '20px';
-      } else {
-        a.style.top = '450px';
-        a.style.bottom = 'auto';
-      }
-      //зникає при знаходженні на блоці "price"
-      if (scrollY > priceBlockTop && scrollY < priceBlockBottom) {
-        a.style.display = 'none';
-      } else {
-        a.style.display = 'block';
-      }
-
-    });
+   
 
   }
   
