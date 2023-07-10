@@ -10,16 +10,16 @@
 
 $( document ).ready(function() {
 
-  if ($(window).width() > 1006) {
-    /* $('.title span').addClass("hidden_animation").viewportChecker({
-      classToAdd: 'visible animated pulse', // Class to add to the elements when they are visible
-      offset: "10%"
-    }); */
+  /* if ($(window).width() > 1006) {
+    // $('.title span').addClass("hidden_animation").viewportChecker({
+    //   classToAdd: 'visible animated pulse', // Class to add to the elements when they are visible
+    //   offset: "10%"
+    // });
+  } */
     $('.head .container').addClass("hidden_animation").viewportChecker({
       classToAdd: 'visible animated slideInUp', 
-      offset: 0
+      offset: '0%'
     });
-  }
     $('.right').addClass("hidden_animation").viewportChecker({
       classToAdd: 'visible animated fadeInRight', 
       offset: '0%'
@@ -173,7 +173,9 @@ $( document ).ready(function() {
   //=====================
 
 
-  if (window.matchMedia("(max-width: 768px)").matches) {
+  /* if (window.matchMedia("(max-width: 768px)").matches) {
+  } */
+
       //фіксована кнопка мобіла 
      /*window.addEventListener('scroll', function() {
       var a = document.querySelector('.floating-button');
@@ -226,16 +228,7 @@ $( document ).ready(function() {
       adaptiveHeight: true
     }); */
 
-   
 
-  }
-  
-
-  /* if (/Mobi|Android/i.test(navigator.userAgent)) {
-    // Код, який виконується на мобільних пристроях
-  } else {
-    // Код, який виконується на інших пристроях
-  } */
 }) 
 
 
