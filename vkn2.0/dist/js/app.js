@@ -10,12 +10,6 @@
 
 $( document ).ready(function() {
 
-  /* if ($(window).width() > 1006) {
-    // $('.title span').addClass("hidden_animation").viewportChecker({
-    //   classToAdd: 'visible animated pulse', // Class to add to the elements when they are visible
-    //   offset: "10%"
-    // });
-  } */
     $('.head .container').addClass("hidden_animation").viewportChecker({
       classToAdd: 'visible animated slideInUp', 
       offset: '0%'
@@ -68,7 +62,12 @@ $( document ).ready(function() {
       classToAdd: 'visible animated rotateIn', 
       offset: '30%'
     });
-  // }
+      /* if ($(window).width() > 1006) {
+    // $('.title span').addClass("hidden_animation").viewportChecker({
+    //   classToAdd: 'visible animated pulse', // Class to add to the elements when they are visible
+    //   offset: "10%"
+    // });
+  } */
   //=====================
 
    //фіксована кнопка desctop 
