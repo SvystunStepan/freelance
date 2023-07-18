@@ -1,0 +1,97 @@
+.about-me {
+  margin: 180px 0 100px;
+  position: relative;
+  z-index: 3;
+  &::before {
+    position: absolute;
+    content: '';
+    top: -12px;
+    left: 72px;
+    width: 247px;
+    height: 208px;
+    background-image: url(../images/about-me-vector-1.webp);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 342px;
+    right: 257px;
+    width: 47px;
+    height: 47px;
+    background-image: url(../images/about-me-vector-2.webp);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+.about-me-foto {
+  max-width: 535px;
+  height: auto;
+  margin-top: -55px;
+}
+.about-me-title {
+  color: #ffffff;
+  font-family: "Fixel - Display Bold", sans-serif;
+  font-size: 63px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 68.1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.about-me-item {
+  color: #fb28c5;
+  font-family: "Fixel - Display Bold", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 35px 0 40px;
+}
+.about-me-text {
+  max-width: 354px;
+  max-height: 357px;
+  color: #ffffff;
+  font-family: "Fixel - Display Light";
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 31px;
+  text-align: left;
+}
+.about-me-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about-me-text-item {
+  color: #fb28c5;
+  font-family: "Fixel - Display Bold", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 31px;
+  text-align: center;
+  margin-top: 70px;
+}
+.footer-about-me {
+  position: relative;
+  z-index: 3;
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0px;
+    width: 1920px;
+    height: 871px;
+    background-image: url(../images/vector-bg-about-me.webp);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}

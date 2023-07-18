@@ -1,0 +1,192 @@
+.contact-me {
+  margin: 180px 0 100px;
+}
+.contact-title {
+  color: #ffffff;
+  font-family: Bitter, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 70px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.contact-item {
+  color: #ffffff;
+  font-family: "Fixel - Display Light", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 31px;
+  text-align: left;
+  margin: 45px 0 20px;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  a {
+    color: #ffffff;
+    font-family: "Fixel - Display Bold", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-left: 10px;
+  }
+}
+.contact-mail, .contact-phone {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contact-ico-mail {
+  width: 15px;
+  height: 12px;
+}
+.contact-ico-phone {
+  width: 15px;
+  height: 15px;
+}
+
+
+
+.contact-box {
+  max-width: 457px;
+  width: 100%;
+  min-height: 463px;
+  border-radius: 10px;
+  background-color: #1f1f1f;
+  padding: 20px 33px;
+}
+.form-group {
+
+}
+.form {
+  position: relative;
+  margin: 24px auto 12px;
+  ::placeholder {
+    color: #ffffff;
+    font-family: "Fixel - Display Regular", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 16px;
+    text-align: left;
+  }
+  input {
+    width: 392px;
+    height: 52px;
+    border-radius: 3px;
+    background-color: #0e0e0e;
+    border: none;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    color: #ffffff;
+    font-family: "Fixel - Display Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 16px;
+    text-align: left;
+    padding-left: 52px;
+    outline: none;
+  }
+}
+.input-ico {
+  position: absolute;
+  top: 21px;
+  left: 22px;
+}
+.form-message textarea {
+  width: 392px;
+  min-height: 146px;
+  overflow: hidden;
+  box-sizing: border-box; 
+  border-radius: 3px;
+  background-color: #0e0e0e;
+  resize: none;
+  border: none;
+  outline: none;
+  padding-top: 21px;
+}
+.btn-send {
+  color: #ffffff;
+  font-family: "Fixel - Display Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 23px;
+  text-align: center;
+  max-width: 392px;
+  min-height: 55px;
+  width: 100%;
+  border-radius: 28px;
+  border: none;
+  background-color: #000000;
+  background-image: linear-gradient(89deg, #e00080 0%, #ce00c5 100%);
+  cursor: pointer;
+  transition: all 0.5s ease;
+  padding: 15px;
+  margin-top: 35px;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+    width: 47px;
+    height: 47px;
+    border-radius: 49px;
+    background-color: #ffffff;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 20px;
+    right: 18px;
+    width: 19px;
+    height: 15px;
+    background-image: url(../images/arrow-icon.webp);
+    background-repeat: no-repeat;
+  }
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+.footer-psevdo {
+  z-index: 3;
+  &::before {
+    position: absolute;
+    content: '';
+    top: 170px;
+    left: 83px;
+    width: 161px;
+    height: 236px;
+    background-image: url(../images/contact-me-vector-1.webp);
+    background-repeat: no-repeat;
+    // z-index: -1;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0px;
+    width: 1920px;
+    height: 536px;
+    background-image: url(../images/vector-bg-contact.webp);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
