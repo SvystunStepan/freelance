@@ -1174,7 +1174,6 @@ ul li a {
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
-  // line-height: 70px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -1612,14 +1611,16 @@ margin: 85px 0 90px;
   }
 }
 .social-group {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 50px 0 40px;
   position: relative;
   z-index: 2;
 }
 .social-ico {
   margin: 0 15px;
-  display: inline-block;
+  display: block;
   transition: .5s ease;
   &:hover {
     transform: scale(.9);
