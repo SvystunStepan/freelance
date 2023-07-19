@@ -1853,7 +1853,6 @@ ul li a {
 }
 @media screen and (max-width: 793px) {
   .header-index {
-    // margin-top: 30px;
     line-height: 18px;
     span {
       font-size: 46px;
@@ -1895,7 +1894,12 @@ ul li a {
     text-align: center;
     margin-top: 30px;
   }
+  .contact-box {
+    display: block;
+    margin: 0px auto;
+  }
 }
+
 @media screen and (min-width: 571px) and (max-width: 768px) {
   .header-foto img {
     width: 400px;

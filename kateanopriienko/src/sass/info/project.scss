@@ -117,3 +117,22 @@
     height: auto;
   }
 }
+@media screen and (max-width: 620px) {
+  .page-project-sort {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100px;
+    justify-content: center;
+    max-width: none;
+    width: 100%;
+    /* border-radius: 25px; */
+    background-color: transparent;
+    margin: 50px auto 60px;
+  }
+  .page-project-btn {
+    padding: 8px 12px;
+  }
+  .page-project-btn.active {
+    padding: 8px 12px;
+  }
+}

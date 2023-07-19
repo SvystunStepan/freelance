@@ -64,9 +64,6 @@
   background-color: #1f1f1f;
   padding: 20px 33px;
 }
-.form-group {
-
-}
 .form {
   position: relative;
   margin: 24px auto 12px;
@@ -100,6 +97,7 @@
     text-align: left;
     padding-left: 52px;
     outline: none;
+    width: 100%;
   }
 }
 .input-ico {
@@ -118,6 +116,7 @@
   border: none;
   outline: none;
   padding-top: 21px;
+  width: 100%;
 }
 .btn-send {
   color: #ffffff;
@@ -189,4 +188,21 @@
     background-repeat: no-repeat;
     z-index: -1;
   }
+}
+@media screen and (max-width: 767px) {
+  .contact-me {
+    margin: 50px 0 50px;
+}
+  .contact-title {
+    text-align: center;
+  }
+  .contact-item {
+    text-align: center;
+    margin: 45px 0 20px;
+  }
+  .contacts {
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .footer-psevdo::before {display: none;}
 }

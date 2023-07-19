@@ -22,7 +22,8 @@
   }
   .header-title,
   .page-project-title,
-  .about-me-title {
+  .about-me-title,
+  .view-project-title {
     font-size: 48px;
   }
   .main-title {
@@ -39,6 +40,16 @@
   }
   
 
+  @media screen and (max-width: 570px) {
+    .header-title,
+    .footer-title,
+    .page-project-title,
+    .about-me-title,
+    .view-project-title {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .header-banner {
       margin: 50px auto 30px;
@@ -47,7 +58,7 @@
       margin-top: 160px;
     }
   }
-
+  
 
   // псевдокласи
   .header {
