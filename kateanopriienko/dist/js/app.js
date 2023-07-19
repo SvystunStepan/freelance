@@ -68,11 +68,11 @@ $( document ).ready(function() {
   });
   $('.bounce-left').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated bounceInLeft', 
-    offset: '30%'
+    offset: '20%'
   });
   $('.bounce-right').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated bounceInRight', 
-    offset: '30%'
+    offset: '20%'
   });
   $('.right').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInRight', 
@@ -80,40 +80,74 @@ $( document ).ready(function() {
   });
   //=====================
 
+  // Burger-main
+  $('.drop-btn').click(function() {
+    let dropdown = document.getElementById("dropdown");
+    let container = document.querySelector(".blok");
+    dropdown.classList.toggle("show");
+    container.classList.toggle("change");
+  });
+  
+  window.addEventListener("click", function(event) {
+    var dropdowns = document.getElementsByClassName("nav-box-right");
+    var containers = document.getElementsByClassName("blok");
+    
+    if (!event.target.matches('.drop-btn') && !event.target.matches('.bar1') && !event.target.matches('.bar2') && !event.target.matches('.bar3') && !event.target.matches('.blok')) {
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        var container = containers[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+          container.classList.remove('change');
+        }
+      }
+    }
+  });
+  //=====================
+
   // Language
   const mainFlag = document.querySelector('.main-flag');
   const languageMenu = document.querySelector('.language-menu');
-
+  // Додаємо обробник події при кліку на головний прапор
   mainFlag.addEventListener('click', () => {
     languageMenu.style.display = languageMenu.style.display === 'none' ? 'block' : 'none';
   });
-
-  document.addEventListener('click', (event) => {
-    if (!languageMenu.contains(event.target) && event.target !== mainFlag) {
+  // Отримуємо всі прапори, крім головного прапору
+  const flags = document.querySelectorAll('.language-flag:not(.main-flag)');
+  // Додаємо обробник події при кліку на кожен прапор
+  flags.forEach(flag => {
+    flag.addEventListener('click', () => {
+      // Змінюємо класи для прапорів
+      mainFlag.src = flag.src;
+      mainFlag.alt = flag.alt;
+      // Закриваємо меню
       languageMenu.style.display = 'none';
-    }
+    });
   });
-
-  // Функція для зміни мови при кліку на прапорець (ви можете налаштувати зміну мови за вашими потребами)
-  function changeLanguage(langCode) {
-    // Ваш код для зміни мови на сторінці
-    console.log('Мову змінено на:', langCode);
-  }
   //=====================
 
   // КНОПКА "ПОКАЗАТИ БІЛЬШЕ" - "ПРИХОВАТИ"
-  const projectCardsContainer = document.querySelector(".project-cards");
-  const showMoreBtn = document.getElementById("showMoreBtn");
-
-  showMoreBtn.addEventListener("click", function() {
-    if (projectCardsContainer.style.maxHeight) {
-      // Контент вже розгорнуто, тому згорнемо його
-      projectCardsContainer.style.maxHeight = null;
-      showMoreBtn.textContent = "Показати більше";
+  var showMoreBtn = document.getElementById('showMoreBtn');
+  var projectCards = document.querySelectorAll('.project-card');
+  // Приховує всі блоки, крім перших 4
+  for (var i = 4; i < projectCards.length; i++) {
+    projectCards[i].classList.add('project-hidden');
+  }
+  showMoreBtn.addEventListener('click', function() {
+    // Перевіряємо, чи є хоча б один прихований блок
+    var hiddenBlocks = document.querySelectorAll('.project-card.project-hidden');
+    if (hiddenBlocks.length > 0) {
+        // Показуємо всі приховані блоки
+        for (var i = 0; i < hiddenBlocks.length; i++) {
+          hiddenBlocks[i].classList.remove('project-hidden');
+        }
+        showMoreBtn.textContent = 'Приховати';
     } else {
-      // Розгортаємо контент
-      projectCardsContainer.style.maxHeight = projectCardsContainer.scrollHeight + "px";
-      showMoreBtn.textContent = "Приховати";
+        // Приховуємо всі блоки, крім перших двох
+        for (var i = 4; i < projectCards.length; i++) {
+          projectCards[i].classList.add('project-hidden');
+        }
+        showMoreBtn.textContent = 'Показати більше';
     }
   });
   //=====================

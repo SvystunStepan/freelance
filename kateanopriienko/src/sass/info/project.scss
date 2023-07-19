@@ -92,11 +92,28 @@
   background-color: #ffffff;
   padding: 15px 20px;
 }
-.projects {
+.page-projects-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1143px;
-  overflow: hidden;
   margin-bottom: 100px;
+}
+
+.page-project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 555px;
+  border-radius: 10px;
+  background-color: #1f1f1f;
+  padding: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+  img {
+    max-width: 555px;
+    width: 100%;
+    height: auto;
+  }
 }

@@ -18,20 +18,37 @@
         <a href="index.html">kateanopriienko</a>
       </div>
     </div>
-    <div class="nav-box-right">
-      <ul class="nav-main">
-        <li><a href="index.html" class="hover-link">Головна</a></li>
-        <li><a href="about-me.html" class="hover-link">Про мене</a></li>
-        <li><a href="project.html" class="hover-link">Проекти</a></li>
-      </ul>
-      <div class="language-switch">
-        <img src="images/ukraine-flag.svg" alt="Укранська" class="language-flag main-flag" data-lang="uk">
-        <div class="language-menu" style="display: none;">
-          <img src="images/russia-flag.svg" alt="Русский" class="language-flag" data-lang="ru">
-          <img src="images/england-flag.svg" alt="English" class="language-flag" data-lang="en">
-        </div>
+
+    <div class="language-switch mobile">
+      <img src="images/ukraine-flag.svg" alt="Українська" class="language-flag main-flag" data-lang="uk">
+      <div class="language-menu" style="display: none;">
+        <img src="images/russia-flag.svg" alt="Русский" class="language-flag" data-lang="ru">
+        <img src="images/england-flag.svg" alt="English" class="language-flag" data-lang="en">
       </div>
-      <a href="contact.html" class="nav-btn">Зв'язок зі мною</a>
+    </div>
+    <div class="burger">
+      <button class="drop-btn">
+        <div class="blok">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </button>
+      <div class="nav-box-right" id="dropdown">
+        <ul class="nav-main">
+          <li><a href="index.html" class="hover-link">Головна</a></li>
+          <li><a href="about-me.html" class="hover-link">Про мене</a></li>
+          <li><a href="project.html" class="hover-link">Проекти</a></li>
+        </ul>
+        <div class="language-switch desktop">
+          <img src="images/ukraine-flag.svg" alt="Українська" class="language-flag main-flag" data-lang="uk">
+          <div class="language-menu" style="display: none;">
+            <img src="images/russia-flag.svg" alt="Русский" class="language-flag" data-lang="ru">
+            <img src="images/england-flag.svg" alt="English" class="language-flag" data-lang="en">
+          </div>
+        </div>
+        <a href="contact.html" class="nav-btn">Зв'язок зі мною</a>
+      </div>
     </div>
   </nav>
 
@@ -42,7 +59,7 @@
           <img class="header-banner" src="images/banner.webp" alt="">
         </div>
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-md-4">
             <h1 class="header-title up-1">Анопрієнко Катерина </h1>
             <p class="header-title-item up-2">
               Привіт. Я графічний дизайнер з Києва, 
@@ -53,24 +70,24 @@
             <a href="" class="header-btn hover-btn-1 up-2">Поговоримо?</a>
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-md-5 col-9 order-2">
             <div class="header-foto">
               <img src="images/header-foto.webp" alt="">
             </div>
           </div>
 
-          <div class="col-lg-2">
+          <div class="col-3 order-1 order-md-3 mt-auto mb-auto my-mb-0">
             <div class="header-index bounce-right-1">
               <span>200+</span>
-              Щасливих клієнтів
+              <br> Щасливих клієнтів
             </div>
             <div class="header-index bounce-right-2">
               <span>280+</span>
-              Реалізованих&nbsp;проектів
+              <br> Реалізованих проектів
             </div>
             <div class="header-index bounce-right-3">
               <span>99%</span>
-              Задоволених клієнтів
+              <br> Задоволених клієнтів
             </div>
           </div>
         </div>
@@ -84,7 +101,7 @@
         <h2 class="main-title up">чим я можу допомогти?</h2>
         <div class="row">
 
-          <div class="col-lg-4">
+          <div class="col-sm-4 my-2 my-sm-0">
             <div class="help-border up-1">
               <div class="help-box">
                 <img src="images/header-vector-1.webp" alt="">
@@ -103,7 +120,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-sm-4 my-2 my-sm-0">
             <div class="help-border up-2">
               <div class="help-box">
                 <img src="images/header-vector-2.webp" alt="">
@@ -121,7 +138,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-sm-4 my-2 my-sm-0">
             <div class="help-border up-3">
               <div class="help-box">
                 <img src="images/header-vector-3.webp" alt="">
@@ -147,108 +164,127 @@
       <div class="container">
         <h2 class="main-title up">проекти</h2>
         <p class="project-item up">Протягом багатьох років я працювала над різними проектами, різної сфери та складності. Ось найцікавіші та найскладніші, де вдалося реалізувати справді корисні та унікальні продукти.</p>
+        
         <div class="project-cards up">
+          <div class="row">
 
-          <div class="project-card bounce-left">
-            <img src="images/project-img-1.webp" alt="">
-            <div class="btn-group">
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-left">
+                <img src="images/project-img-1.webp" alt="">
+                <div class="btn-group">
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>SeaJetCar</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>SeaJetCar</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
-          </div>
 
-          <div class="project-card bounce-right">
-            <img src="images/project-img-2.webp" alt="">
-            <div class="btn-group">
-              <a href="" class="btn hover-btn-3">Брендинг</a>
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-right">
+                <img src="images/project-img-2.webp" alt="">
+                <div class="btn-group">
+                  <a href="" class="btn hover-btn-3">Брендинг</a>
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>Trust Capital</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>Trust Capital</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
-          </div>
 
-          <div class="project-card bounce-left">
-            <img src="images/project-img-1.webp" alt="">
-            <div class="btn-group">
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-left">
+                <img src="images/project-img-1.webp" alt="">
+                <div class="btn-group">
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>SeaJetCar</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>SeaJetCar</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
-          </div>
 
-          <div class="project-card bounce-right">
-            <img src="images/project-img-2.webp" alt="">
-            <div class="btn-group">
-              <a href="" class="btn hover-btn-3">Брендинг</a>
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-right">
+                <img src="images/project-img-2.webp" alt="">
+                <div class="btn-group">
+                  <a href="" class="btn hover-btn-3">Брендинг</a>
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>Trust Capital</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>Trust Capital</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
-          </div>
 
-          <div class="project-card bounce-left">
-            <img src="images/project-img-1.webp" alt="">
-            <div class="btn-group">
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-left">
+                <img src="images/project-img-1.webp" alt="">
+                <div class="btn-group">
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>SeaJetCar</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>SeaJetCar</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
-          </div>
 
-          <div class="project-card bounce-right">
-            <img src="images/project-img-2.webp" alt="">
-            <div class="btn-group">
-              <a href="" class="btn hover-btn-3">Брендинг</a>
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-right">
+                <img src="images/project-img-2.webp" alt="">
+                <div class="btn-group">
+                  <a href="" class="btn hover-btn-3">Брендинг</a>
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>Trust Capital</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>Trust Capital</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
-          </div>
 
-          <div class="project-card bounce-left">
-            <img src="images/project-img-1.webp" alt="">
-            <div class="btn-group">
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-left">
+                <img src="images/project-img-1.webp" alt="">
+                <div class="btn-group">
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>SeaJetCar</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>SeaJetCar</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
-          </div>
 
-          <div class="project-card bounce-right">
-            <img src="images/project-img-2.webp" alt="">
-            <div class="btn-group">
-              <a href="" class="btn hover-btn-3">Брендинг</a>
-              <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+            <div class="col-lg-6">
+              <div class="project-card bounce-right">
+                <img src="images/project-img-2.webp" alt="">
+                <div class="btn-group">
+                  <a href="" class="btn hover-btn-3">Брендинг</a>
+                  <a href="view-project.html" class="btn hover-btn-3">Web дизайн</a>
+                </div>
+                <div class="project-card-title">
+                  <span>Trust Capital</span><br>
+                  Розробка структури сайту та створення макету веб-сайту.
+                </div>
+                <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+              </div>
             </div>
-            <div class="project-card-title">
-              <span>Trust Capital</span><br>
-              Розробка структури сайту та створення макету веб-сайту.
-            </div>
-            <a  href="" class="project-card-btn hover-btn-2">Переглянути</a>
+
           </div>
-          
         </div>
         <a class="show-more-btn hover-btn-1" id="showMoreBtn">Показати більше</a>
       </div>
@@ -259,10 +295,12 @@
         <h2 class="main-title up">як я працюю</h2>
         <div class="row">
 
-          <div class="col-lg-3">
+          <div class="col-xl-3 col-sm-6">
             <div class="how-i-work-box up-1">
-              <div class="how-i-work-number first">
-                1
+              <div class="box-item first">
+                <div class="how-i-work-number">
+                  1
+                </div>
                 <div class="ellipse">
                   <img src="images/how-i-work-vector-1.webp" alt="">
                 </div>
@@ -274,10 +312,12 @@
             </div>
           </div>
 
-          <div class="col-lg-3">
+          <div class="col-xl-3 col-sm-6">
             <div class="how-i-work-box up-2">
-              <div class="how-i-work-number">
-                2
+              <div class="box-item">
+                <div class="how-i-work-number">
+                  2
+                </div>
                 <div class="ellipse">
                   <img src="images/how-i-work-vector-2.webp" alt="">
                 </div>
@@ -289,10 +329,12 @@
             </div>
           </div>
 
-          <div class="col-lg-3">
+          <div class="col-xl-3 col-sm-6">
             <div class="how-i-work-box up-3">
-              <div class="how-i-work-number">
-                3
+              <div class="box-item">
+                <div class="how-i-work-number">
+                  3
+                </div>
                 <div class="ellipse">
                   <img src="images/how-i-work-vector-3.webp" alt="">
                 </div>
@@ -304,10 +346,12 @@
             </div>
           </div>
 
-          <div class="col-lg-3">
+          <div class="col-xl-3 col-sm-6">
             <div class="how-i-work-box up-4">
-              <div class="how-i-work-number">
-                4
+              <div class="box-item">
+                <div class="how-i-work-number">
+                  4
+                </div>
                 <div class="ellipse">
                   <img src="images/how-i-work-vector-4.webp" alt="">
                 </div>

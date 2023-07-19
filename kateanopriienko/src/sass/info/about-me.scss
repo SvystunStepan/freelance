@@ -1,28 +1,32 @@
 .about-me {
   margin: 180px 0 100px;
-  position: relative;
-  z-index: 3;
-  &::before {
-    position: absolute;
-    content: '';
-    top: -12px;
-    left: 72px;
-    width: 247px;
-    height: 208px;
-    background-image: url(../images/about-me-vector-1.webp);
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-  &::after {
-    position: absolute;
-    content: '';
-    top: 342px;
-    right: 257px;
-    width: 47px;
-    height: 47px;
-    background-image: url(../images/about-me-vector-2.webp);
-    background-repeat: no-repeat;
-    z-index: -1;
+  .container {
+    position: relative;
+    z-index: 3;
+    &::before {
+      position: absolute;
+      content: '';
+      top: -12px;
+      // left: 50px;
+      left: -248px;
+      width: 247px;
+      height: 208px;
+      background-image: url(../images/about-me-vector-1.webp);
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      top: 342px;
+      // right: 257px;
+      right: -48px;
+      width: 47px;
+      height: 47px;
+      background-image: url(../images/about-me-vector-2.webp);
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
   }
 }
 .about-me-foto {
@@ -52,9 +56,14 @@
   text-transform: uppercase;
   margin: 35px 0 40px;
 }
+.about-me-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .about-me-text {
-  max-width: 354px;
-  max-height: 357px;
+  // max-width: 354px;
+  // max-height: 357px;
   color: #ffffff;
   font-family: "Fixel - Display Light";
   font-size: 16px;
@@ -63,11 +72,7 @@
   letter-spacing: normal;
   line-height: 31px;
   text-align: left;
-}
-.about-me-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0 15px;
 }
 .about-me-text-item {
   color: #fb28c5;
@@ -78,7 +83,8 @@
   letter-spacing: normal;
   line-height: 31px;
   text-align: center;
-  margin-top: 70px;
+  max-width: 660px;
+  margin: 70px auto 0;
 }
 .footer-about-me {
   position: relative;
@@ -93,5 +99,27 @@
     background-image: url(../images/vector-bg-about-me.webp);
     background-repeat: no-repeat;
     z-index: -1;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .about-me-text {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .about-me {
+    margin: 50px 0 50px;
+  }
+  .about-me-foto {
+    display: block;
+    margin: 0 auto;
+  }
+  .about-me-title {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .about-me-item {
+    text-align: center;
   }
 }

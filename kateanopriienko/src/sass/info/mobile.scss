@@ -1,2 +1,85 @@
 & {
+  .language-switch {
+    width: 33px;
+    height: auto;
+    margin: 3px 5px 0 auto;
+  }
+
+  .nav-btn {
+    padding: 10px 13px;
+    margin-top: 5px;
+  }
+  .footer {
+    padding-top: 50px;
+  }
+  .footer-title {
+    font-size: 48px;
+    line-height: 50px;
+  }
+  .footer-item {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .header-title,
+  .page-project-title,
+  .about-me-title {
+    font-size: 48px;
+  }
+  .main-title {
+    font-size: 36px;
+  }
+  .help .main-title {
+    margin-bottom: 50px;
+  }
+
+  // .header-banner {display: none;}
+  .header-title-item {
+    line-height: 31px;
+    margin: 20px 0;
+  }
+  
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .header-banner {
+      margin: 50px auto 30px;
+    }
+    .header-foto img {
+      margin-top: 160px;
+    }
+  }
+
+
+  // псевдокласи
+  .header {
+    margin-bottom: 50px;
+    &::after {
+     display: none;
+    }
+  }
+  .help {
+    padding-bottom: 50px;
+    &::before {
+     display: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
+  .project-section {
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
+  .how-i-work {
+    margin-top: 50px;
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
 }

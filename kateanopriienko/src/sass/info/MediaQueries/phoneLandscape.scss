@@ -1,9 +1,12 @@
 @import '../../mq';
 
 @media #{$phoneLandscape} {
-    @import '../mobile';
-
-    & {
-      
+  @import '../mobile';
+  & {
+    .nav-main {
+      flex-direction: column;
+      justify-content: center;
     }
+    
+  }
 }
