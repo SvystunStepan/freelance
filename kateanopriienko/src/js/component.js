@@ -106,24 +106,57 @@ $( document ).ready(function() {
   //=====================
 
   // Language
-  const mainFlag = document.querySelector('.main-flag');
+  const mainFlagDesktop = document.querySelector('.language-switch.desktop .main-flag');
+  const languageMenuDesktop = document.querySelector('.language-switch.desktop .language-menu');
+
+  mainFlagDesktop.addEventListener('click', () => {
+    languageMenuDesktop.style.display = languageMenuDesktop.style.display === 'none' ? 'block' : 'none';
+  });
+
+  const mainFlagMobile = document.querySelector('.language-switch.mobile .main-flag');
+  const languageMenuMobile = document.querySelector('.language-switch.mobile .language-menu');
+
+  mainFlagMobile.addEventListener('click', () => {
+    languageMenuMobile.style.display = languageMenuMobile.style.display === 'none' ? 'block' : 'none';
+  });
+
+  const flagsDesktop = document.querySelectorAll('.language-switch.desktop .language-flag:not(.main-flag)');
+
+  flagsDesktop.forEach(flag => {
+    flag.addEventListener('click', () => {
+      mainFlagDesktop.src = flag.src;
+      mainFlagDesktop.alt = flag.alt;
+      languageMenuDesktop.style.display = 'none';
+    });
+  });
+
+  const flagsMobile = document.querySelectorAll('.language-switch.mobile .language-flag:not(.main-flag)');
+
+  flagsMobile.forEach(flag => {
+    flag.addEventListener('click', () => {
+      mainFlagMobile.src = flag.src;
+      mainFlagMobile.alt = flag.alt;
+      languageMenuMobile.style.display = 'none';
+    });
+  });
+
+/*   const mainFlag = document.querySelector('.main-flag');
   const languageMenu = document.querySelector('.language-menu');
-  // Додаємо обробник події при кліку на головний прапор
+
   mainFlag.addEventListener('click', () => {
     languageMenu.style.display = languageMenu.style.display === 'none' ? 'block' : 'none';
   });
-  // Отримуємо всі прапори, крім головного прапору
   const flags = document.querySelectorAll('.language-flag:not(.main-flag)');
-  // Додаємо обробник події при кліку на кожен прапор
+
   flags.forEach(flag => {
     flag.addEventListener('click', () => {
-      // Змінюємо класи для прапорів
+
       mainFlag.src = flag.src;
       mainFlag.alt = flag.alt;
-      // Закриваємо меню
+
       languageMenu.style.display = 'none';
     });
-  });
+  }); */
   //=====================
 
   // КНОПКА "ПОКАЗАТИ БІЛЬШЕ" - "ПРИХОВАТИ"

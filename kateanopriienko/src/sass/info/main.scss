@@ -985,9 +985,8 @@ header, main, footer {
   -webkit-background-clip: text;
   color: transparent;
 }
-.mobile {display: block;}
-.desktop {display: none;}
-.burger { display: block;}
+.language-switch.mobile {display: block;}
+.language-switch.desktop {display: none;}
 .drop-btn {
   cursor: pointer;
   border: none;
@@ -1813,10 +1812,9 @@ ul li a {
   .nav-btn { padding: 19px 20px;}
 }
 @media screen and (min-width: 720px) {
-  .mobile {display: none;}
-  .desktop {display: block;}
+  .language-switch.mobile {display: none;}
+  .language-switch.desktop {display: block;}
   .nav-box-right {
-    // display: block;
     border: none;
     position: static;
     display: flex;
