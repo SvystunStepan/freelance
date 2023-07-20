@@ -1,6 +1,7 @@
 .project-page {
   position: relative;
   z-index: 3;
+  // margin-top: 150px;
   &::before {
     position: absolute;
     content: '';
@@ -40,6 +41,7 @@
   letter-spacing: normal;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 200px;
 }
 
 .tab-buttons {
