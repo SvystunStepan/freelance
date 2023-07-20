@@ -202,7 +202,21 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       showMoreBtn.addEventListener('click', function() {
-          // Залишаємо решту коду без змін
-      });
+      // Перевіряємо, чи є хоча б один прихований блок
+      let hiddenBlocks = document.querySelectorAll('.project-hidden');
+      if (hiddenBlocks.length > 0) {
+          // Показуємо всі приховані блоки
+          for (let i = 0; i < hiddenBlocks.length; i++) {
+              hiddenBlocks[i].classList.remove('project-hidden');
+          }
+          showMoreBtn.textContent = 'Приховати';
+      } else {
+          // Приховуємо всі блоки, крім перших двох
+          for (let i = 4; i < projectCards.length; i++) {
+              projectCards[i].classList.add('project-hidden');
+          }
+          showMoreBtn.textContent = 'Показати більше';
+      }
+  });
   }
 });
