@@ -136,33 +136,7 @@ $( document ).ready(function() {
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    let showMoreBtn = document.getElementById('showMoreBtn');
-    let projectCards = document.querySelectorAll('.project-card');
-
-    // Приховуємо всі блоки, крім перших 4
-    for (let i = 4; i < projectCards.length; i++) {
-      projectCards[i].classList.add('project-hidden');
-    }
-
-    showMoreBtn.addEventListener('click', function() {
-      // Перевіряємо, чи є хоча б один прихований блок
-      let hiddenBlocks = document.querySelectorAll('.project-hidden');
-      if (hiddenBlocks.length > 0) {
-        // Показуємо всі приховані блоки
-        for (let i = 0; i < hiddenBlocks.length; i++) {
-            hiddenBlocks[i].classList.remove('project-hidden');
-        }
-        showMoreBtn.textContent = 'Приховати';
-      } else {
-        // Приховуємо всі блоки, крім перших двох
-        for (let i = 4; i < projectCards.length; i++) {
-            projectCards[i].classList.add('project-hidden');
-        }
-        showMoreBtn.textContent = 'Показати більше';
-      }
-    });
-  });
+  
   /* // КНОПКА "ПОКАЗАТИ БІЛЬШЕ" - "ПРИХОВАТИ"
   let showMoreBtn = document.getElementById('showMoreBtn');
   let projectCards = document.querySelectorAll('.project-card');
@@ -216,3 +190,30 @@ $( document ).ready(function() {
 }) 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  let showMoreBtn = document.getElementById('showMoreBtn');
+  let projectCards = document.querySelectorAll('.project-card');
+
+  // Приховуємо всі блоки, крім перших 4
+  for (let i = 4; i < projectCards.length; i++) {
+      projectCards[i].classList.add('project-hidden');
+  }
+
+  showMoreBtn.addEventListener('click', function() {
+      // Перевіряємо, чи є хоча б один прихований блок
+      let hiddenBlocks = document.querySelectorAll('.project-hidden');
+      if (hiddenBlocks.length > 0) {
+          // Показуємо всі приховані блоки
+          for (let i = 0; i < hiddenBlocks.length; i++) {
+              hiddenBlocks[i].classList.remove('project-hidden');
+          }
+          showMoreBtn.textContent = 'Приховати';
+      } else {
+          // Приховуємо всі блоки, крім перших двох
+          for (let i = 4; i < projectCards.length; i++) {
+              projectCards[i].classList.add('project-hidden');
+          }
+          showMoreBtn.textContent = 'Показати більше';
+      }
+  });
+});
