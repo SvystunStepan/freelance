@@ -1,7 +1,6 @@
 .project-page {
   position: relative;
   z-index: 3;
-  // margin-top: 150px;
   &::before {
     position: absolute;
     content: '';
@@ -48,7 +47,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // max-width: 615px;
   max-width: 700px;
   width: 100%;
   min-height: 50px;
@@ -133,7 +131,6 @@
     justify-content: center;
     max-width: none;
     width: 100%;
-    /* border-radius: 25px; */
     background-color: transparent;
     margin: 30px auto;
   }

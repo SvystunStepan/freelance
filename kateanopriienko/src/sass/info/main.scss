@@ -1007,7 +1007,6 @@ header, main, footer {
   align-items: center;
   width: 26px;
   height: 21px;
-  // margin: 0 15px;
 }
 .nav-box-right {
   transition: .4s;
@@ -1142,7 +1141,6 @@ ul li a {
     position: absolute;
     content: '';
     right: -100px;
-    // bottom: -50px;
     bottom: -110px;
     width: 531px;
     height: 229px;
@@ -1199,7 +1197,6 @@ ul li a {
   margin-top: -340px;
   img {
     max-width: 561px;
-    // max-height: 780px;
     height: auto;
   }
 }
@@ -1272,7 +1269,6 @@ ul li a {
   margin-bottom: 70px;
 }
 .help-border {
-  // max-width: 360px;
   min-height: 293px;
   height: 100%;
   border-radius: 10px;
@@ -1368,7 +1364,6 @@ ul li a {
     height: 1821px;
     background-image: url(../images/vector-bg-project.webp);
     background-repeat: no-repeat;
-    // z-index: -1;
   }
 }
 .project {
@@ -1468,7 +1463,6 @@ ul li a {
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
-  // line-height: normal;
   line-height: 23px;
   text-align: left;
   margin: 20px 0;
@@ -1478,7 +1472,6 @@ ul li a {
     font-weight: 700;
     font-style: normal;
     letter-spacing: normal;
-    // line-height: 70px;
   }
 }
 .project-card-btn{
@@ -1710,7 +1703,6 @@ ul li a {
 
 .hover-btn-1 {
   position: relative;
-  // box-shadow: inset 2px 2px 2px 0px rgb(255 255 255 / 50%), 7px 7px 20px 0px rgb(0 0 0 / 10%), 4px 4px 5px 0px rgb(0 0 0 / 10%);
   transition: all 0.5s ease;
   overflow: hidden;
   &:hover {
@@ -1772,7 +1764,6 @@ ul li a {
   transition: all 0.5s ease;
   cursor: pointer;
   position: relative;
-  // box-shadow: inset 2px 2px 2px 0px rgb(255 255 255 / 50%), 7px 7px 20px 0px rgb(0 0 0 / 10%), 4px 4px 5px 0px rgb(0 0 0 / 10%);
   z-index: 3;
   &:hover {
     color: #fff;
@@ -1854,7 +1845,6 @@ ul li a {
     margin: 0 auto;
   }
   .project-cards {
-    // max-height: 2300px;
     max-height: 50%;
   }
   .project-card, .page-project-card {
@@ -1901,15 +1891,7 @@ ul li a {
   .how-i-work-box {
     margin: 50px auto;
     }
-  .how-i-work-number {
-    // font-size: 233px;
-    // font-weight: 700;
-    // line-height: 177.26px;
-  }
   .how-i-work-title {
-    // font-size: 14px;
-    // font-weight: 400;
-    // line-height: 26px;
     text-align: center;
     margin-top: 30px;
   }

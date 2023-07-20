@@ -190,9 +190,3 @@ $( document ).ready(function() {
   defaultTab.classList.add('active'); */
 
 }) 
-/* 
-
-// КНОПКА "ПОКАЗАТИ БІЛЬШЕ" - "ПРИХОВАТИ"
-document.addEventListener('DOMContentLoaded', function() {
- 
-}); */
