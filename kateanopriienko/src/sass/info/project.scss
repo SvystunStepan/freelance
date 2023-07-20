@@ -1,4 +1,3 @@
-
 .project-page {
   position: relative;
   z-index: 3;
@@ -25,6 +24,10 @@
     z-index: -1;
   }
 }
+ .tab-container {
+  padding: 10px;
+}
+
 .page-project-title {
   background: linear-gradient(to bottom, #e00080 0%, #ce00c5 100%);
   background-clip: text;
@@ -39,11 +42,12 @@
   text-transform: uppercase;
 }
 
-.page-project-sort {
+.tab-buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 615px;
+  // max-width: 615px;
+  max-width: 700px;
   width: 100%;
   min-height: 50px;
   border-radius: 25px;
@@ -51,47 +55,46 @@
   margin: 63px auto 96px;
 }
 
-.page-project-btn {
+.tab-btn {
   color: #ffffff;
-  font-family: "Fixel - Display Regular", sans-serif;
+  font-family: "Fixel - Display Bold", sans-serif;
   font-size: 14px;
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
+  line-height: 1;
   text-align: center;
   background-color: transparent;
   border: none;
+  border-radius: 22px;
+  padding: 12px 20px;
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.5s ease;
   &:hover {
     color: #cf00bd;
-    white-space: nowrap;
-    font-family: "Fixel - Display Bold", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    max-height: 44px;
     border-radius: 22px;
     background-color: #ffffff;
-    padding: 15px 20px;
   }
 }
-.page-project-btn:first-of-type {
-  padding-left: 20px;
+.tab-btn:first-of-type {
+  margin-left: 6px;
 }
-.page-project-btn:last-of-type {
-  padding-right: 20px;
+.tab-btn:last-of-type {
+  margin-right: 6px;
 }
-.page-project-btn.active {
+.tab-btn.active {
   color: #cf00bd;
-  white-space: nowrap;
-  font-family: "Fixel - Display Bold", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  max-height: 44px;
   border-radius: 22px;
   background-color: #ffffff;
-  padding: 15px 20px;
+  padding: 12px 20px;
 }
+/* .tab-content .tab-item {
+  display: none;
+}
+.tab-content .tab-item.active {
+  display: block;
+} */
 .page-projects-cards {
   display: flex;
   flex-wrap: wrap;
@@ -109,7 +112,7 @@
   border-radius: 10px;
   background-color: #1f1f1f;
   padding: 15px;
-  margin-bottom: 25px;
+  margin: 0 auto 25px;
   text-align: center;
   img {
     max-width: 555px;
@@ -117,8 +120,8 @@
     height: auto;
   }
 }
-@media screen and (max-width: 620px) {
-  .page-project-sort {
+@media screen and (max-width: 768px) {
+  .tab-buttons {
     display: flex;
     flex-wrap: wrap;
     min-height: 100px;
@@ -129,10 +132,10 @@
     background-color: transparent;
     margin: 50px auto 60px;
   }
-  .page-project-btn {
+  .tab-btn {
     padding: 8px 12px;
   }
-  .page-project-btn.active {
+  .tab-btn.active {
     padding: 8px 12px;
   }
 }
