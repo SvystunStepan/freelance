@@ -128,42 +128,42 @@
   line-height: 23px;
   text-align: center;
   max-width: 392px;
-  min-height: 55px;
   width: 100%;
+  min-height: 55px;
   border-radius: 28px;
   border: none;
   background-color: #000000;
   background-image: linear-gradient(89deg, #e00080 0%, #ce00c5 100%);
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: scale 0.5s ease;
   padding: 15px;
   margin-top: 35px;
   position: relative;
-  &::before {
-    position: absolute;
-    content: '';
-    top: 3px;
-    right: 3px;
-    bottom: 3px;
-    width: 47px;
-    height: 47px;
-    border-radius: 49px;
-    background-color: #ffffff;
-  }
-  &::after {
-    position: absolute;
-    content: '';
-    top: 20px;
-    right: 18px;
-    width: 19px;
-    height: 15px;
-    background-image: url(../images/arrow-icon.webp);
-    background-repeat: no-repeat;
-  }
   &:hover {
     transform: scale(0.95);
   }
 }
+
+.btn-send-ellipse {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: 47px;
+  height: 47px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: left 0.5s ease; 
+  img {
+    margin: 16px auto;
+  }
+}
+
+.btn-send:hover .btn-send-ellipse {
+  left: calc(100% - 51px);
+}
+
+
 .footer-psevdo {
   z-index: 3;
   &::before {
@@ -195,6 +195,7 @@
 }
   .contact-title {
     text-align: center;
+    margin-top: 70px;
   }
   .contact-item {
     text-align: center;

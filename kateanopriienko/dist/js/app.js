@@ -24,7 +24,7 @@ $( document ).ready(function() {
   });
   $('.up').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInUp', 
-    offset: '30%'
+    offset: '0%'
   });
   $('.bounce-right-1').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible time-1 bounceInRight', 
