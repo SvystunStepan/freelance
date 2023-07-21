@@ -3,7 +3,17 @@
 @media #{$tabletLandscape} {
   @import '../desktop';
   &{
-
-
+    .header {
+      margin-top: 430px;
+    }
+    .header-foto {
+      margin-top: -240px;
+      &::before {
+        top: -300px;
+      }
+    }
+    .foto {
+      width: 500px;
+    }
   }
 }

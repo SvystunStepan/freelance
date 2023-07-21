@@ -23,6 +23,13 @@
   .about-me-title,
   .view-project-title {
     font-size: 48px;
+    text-align: center;
+  }
+  .header-index {
+    span {
+      font-size: 46px;
+      line-height: 1;
+    }
   }
   .main-title {
     font-size: 36px;
@@ -34,6 +41,10 @@
   .header-title-item {
     line-height: 31px;
     margin: 20px 0;
+    text-align: center;
+  }
+  .header-btn {
+    margin: 0 auto;
   }
   
 
@@ -46,16 +57,19 @@
       font-size: 36px;
       line-height: 40px;
     }
-  }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .header-banner {
-      margin: 100px auto 30px;
+    .header-index {
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 18px;
+      span {
+        font-size: 30px;
+        line-height: 30px;
+      }
     }
-    .header-foto img {
-      margin-top: 160px;
+    .main-title {
+      font-size: 28px;
     }
   }
-  
 
   // псевдокласи
   .header {

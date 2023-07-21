@@ -2,7 +2,7 @@
 
 $( document ).ready(function() {
 
-  $('.header-foto, .about-me-foto, .maket').addClass("hidden_animation").viewportChecker({
+  $('.foto, .about-me-foto, .maket').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated zoomIn', 
     offset: '0%'
   });

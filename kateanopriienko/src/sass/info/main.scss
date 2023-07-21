@@ -1136,6 +1136,7 @@ ul li a {
 .header {
   position: relative;
   z-index: 3;
+  margin-top: 470px;
   margin-bottom: 115px;
   &::after {
     position: absolute;
@@ -1149,9 +1150,7 @@ ul li a {
     z-index: -1;
   }
 }
-.header-banner {
-  margin: 120px auto 90px;
-}
+
 .header-title {
   color: #ffffff;
   font-family: Bitter, sans-serif;
@@ -1191,15 +1190,34 @@ ul li a {
   background-image: linear-gradient(89deg, #e00080 0%, #ce00c5 100%);
   padding: 18px 36px;
 }
-
+.header .container {
+  position: relative;
+}
 .header-foto {
   text-align: center;
   margin-top: -340px;
-  img {
-    max-width: 561px;
-    height: auto;
+  &::before {
+    position: absolute;
+    content: "";
+    top: -365px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    min-height: 267px;
+    background-image: url(../images/banner.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
   }
 }
+.header-index-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .header-index {
   color: #ffffff;
   font-family: "Fixel - Display Light", sans-serif;
@@ -1841,9 +1859,7 @@ ul li a {
   .header-banner {
     margin: 80px auto 40px;
   }
-  .header-foto {
-    margin: 0 auto;
-  }
+
   .project-cards {
     max-height: 50%;
   }
@@ -1861,13 +1877,6 @@ ul li a {
   }
 }
 @media screen and (max-width: 793px) {
-  .header-index {
-    line-height: 18px;
-    span {
-      font-size: 46px;
-      line-height: 52px;
-    }
-  }
   .project {
     margin-top: 50px;
   }
@@ -1901,11 +1910,6 @@ ul li a {
   }
 }
 
-@media screen and (min-width: 571px) and (max-width: 768px) {
-  .header-foto img {
-    width: 400px;
-  }
-}
 @media screen and (max-width: 375px) {
   .nav-icon img{
     width: 25px;
