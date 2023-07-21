@@ -11,7 +11,7 @@ $( document ).ready(function() {
     offset: '0%'
   });
   $('.up-2').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible time-2 fadeInUp', 
+    classToAdd: 'visible time-2 fadeInUp',  
     offset: '0%'
   });
   $('.up-3').addClass("hidden_animation").viewportChecker({
@@ -40,7 +40,7 @@ $( document ).ready(function() {
   });
   $('.down').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInDown', 
-    offset: '30%'
+    offset: '0%'
   });
   $('.hover-btn-1').addClass("hidden_animation").viewportChecker({ 
     classToAdd: 'visible animated bounceIn', 
@@ -58,13 +58,9 @@ $( document ).ready(function() {
     classToAdd: 'visible time-3 bounceInDown', 
     offset: '0%'
   });
-  $('.bounce-left').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated bounceInLeft', 
-    offset: '20%'
-  });
-  $('.bounce-right').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated bounceInRight', 
-    offset: '20%'
+  $('.in').addClass("hidden_animation").viewportChecker({
+    classToAdd: 'visible animated zoomIn', 
+    offset: '0%'
   });
   $('.right').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInRight', 
@@ -73,6 +69,14 @@ $( document ).ready(function() {
   $('.left').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInLeft', 
     offset: '0%'
+  });
+  $('.right-page').addClass("hidden_animation").viewportChecker({
+    classToAdd: 'visible animated fadeInRight', 
+    offset: '-100%'
+  });
+  $('.left-page').addClass("hidden_animation").viewportChecker({
+    classToAdd: 'visible animated fadeInLeft', 
+    offset: '-100%'
   });
 
 
@@ -165,28 +169,20 @@ $( document ).ready(function() {
    });
   }
 
-  // ПАНЕЛЬ СОРТУВАННЯ НА СТОРІНЦІ - "project"
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabItems = document.querySelectorAll('.tab-item');
+  // TABS НА СТОРІНЦІ - "project"
+  $('#tabs-nav li:first-child').addClass('tab-active');
+  $('.tab-content').hide();
+  $('.tab-content:first').show();
 
-  // Add event listeners to each tab button
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const tab = button.getAttribute('data-tab');
-
-      // Hide all tab items
-      tabItems.forEach(item => {
-        item.classList.remove('active');
-      });
-
-      // Show the selected tab item
-      const selectedTabItem = document.querySelector(`[data-tab="${tab}"]`);
-      selectedTabItem.classList.add('active');
-    });
+  // Click function
+  $('#tabs-nav li').click(function(){
+    $('#tabs-nav li').removeClass('tab-active');
+    $(this).addClass('tab-active');
+    $('.tab-content').hide();
+    
+    var activeTab = $(this).find('a').attr('href');
+    $(activeTab).fadeIn();
+    return false;
   });
-
-  // Show the default tab on page load (You can set any tab as default by adding the 'active' class to it in HTML)
-  /* const defaultTab = document.querySelector('.tab-item.active');
-  defaultTab.classList.add('active'); */
 
 }) 

@@ -24,10 +24,6 @@
     z-index: -1;
   }
 }
- .tab-container {
-  padding: 10px;
-}
-
 .page-project-title {
   background: linear-gradient(to bottom, #e00080 0%, #ce00c5 100%);
   background-clip: text;
@@ -42,6 +38,8 @@
   text-transform: uppercase;
   margin-top: 150px;
 }
+/* 
+
 
 .tab-buttons {
   display: flex;
@@ -88,13 +86,62 @@
   border-radius: 22px;
   background-color: #ffffff;
   padding: 12px 20px;
-}
-/* .tab-content .tab-item {
-  display: none;
-}
-.tab-content .tab-item.active {
-  display: block;
 } */
+/* Tabs */
+.tabs {
+}
+ul#tabs-nav {
+  // list-style: none;
+  // margin: 0;
+  // padding: 5px;
+  // overflow: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 700px;
+  width: 100%;
+  min-height: 50px;
+  border-radius: 25px;
+  background-color: #1f1f1f;
+  margin: 63px auto 0;
+}
+ul#tabs-nav li {
+
+}
+#tabs-nav li a:hover,
+.tab-active a {
+  color: #cf00bd;
+  border-radius: 22px;
+  background-color: #ffffff;
+}
+
+#tabs-nav li a {
+  font-family: "Fixel - Display Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-align: center;
+  border-radius: 22px;
+  padding: 12px 20px;
+  white-space: nowrap;
+  transition: all 0.5s ease;
+  display: block;
+}
+#tabs-nav li a:first-of-type {
+  margin-left: 6px;
+}
+#tabs-nav li a:last-of-type {
+  margin-right: 6px;
+}
+.tab-content {
+  margin: 100px auto;
+}
+/*===============================*/
+
+
 .page-projects-cards {
   display: flex;
   flex-wrap: wrap;
@@ -121,23 +168,23 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .page-project-title {
-    margin-top: 100px;
-  }
-  .tab-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 100px;
-    justify-content: center;
-    max-width: none;
-    width: 100%;
-    background-color: transparent;
-    margin: 30px auto;
-  }
-  .tab-btn {
-    padding: 8px 12px;
-  }
-  .tab-btn.active {
-    padding: 8px 12px;
-  }
+  // .page-project-title {
+  //   margin-top: 100px;
+  // }
+  // .tab-buttons {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   min-height: 100px;
+  //   justify-content: center;
+  //   max-width: none;
+  //   width: 100%;
+  //   background-color: transparent;
+  //   margin: 30px auto;
+  // }
+  // .tab-btn {
+  //   padding: 8px 12px;
+  // }
+  // .tab-btn.active {
+  //   padding: 8px 12px;
+  // }
 }
