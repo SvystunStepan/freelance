@@ -951,11 +951,7 @@ header, main, footer {
 }
 //========== animation ============
 
-.nav-box-left, .burger{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 .nav {
   padding: 15px 0;
   margin: 0 auto 0;
@@ -969,6 +965,11 @@ header, main, footer {
 }
 .nav .container {
   max-width: 1324px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-box-left, .burger{
   display: flex;
   align-items: center;
   justify-content: space-between;
