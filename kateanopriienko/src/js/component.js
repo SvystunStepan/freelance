@@ -180,7 +180,7 @@ $( document ).ready(function() {
     $(this).addClass('tab-active');
     $('.tab-content').hide();
     
-    var activeTab = $(this).find('a').attr('href');
+    var activeTab = $(this).find('a').attr('data-filter');
     $(activeTab).fadeIn();
     return false;
   });
