@@ -57,16 +57,16 @@ $( document ).ready(function() {
 
   //фіксована кнопка desctop 
   window.addEventListener('scroll', function() {
-    var a = document.querySelector('.banner-float-btn');
-    var priceBlock = document.getElementById('price');
-    var bannerBlock = document.getElementById('banner');
-    var scrollY = window.scrollY;
-    var priceBlockTop = priceBlock.offsetTop;
-    var priceBlockHeight = priceBlock.offsetHeight;
-    var priceBlockBottom = priceBlockTop + priceBlockHeight;
-    var bannerBlockTop = bannerBlock.offsetTop;
-    var bannerBlockHeight = bannerBlock.offsetHeight;
-    var bannerBlockBottom = bannerBlockTop + bannerBlockHeight;
+    let a = document.querySelector('.banner-float-btn');
+    let priceBlock = document.getElementById('price');
+    let bannerBlock = document.getElementById('banner');
+    let scrollY = window.scrollY;
+    let priceBlockTop = priceBlock.offsetTop;
+    let priceBlockHeight = priceBlock.offsetHeight;
+    let priceBlockBottom = priceBlockTop + priceBlockHeight;
+    let bannerBlockTop = bannerBlock.offsetTop;
+    let bannerBlockHeight = bannerBlock.offsetHeight;
+    let bannerBlockBottom = bannerBlockTop + bannerBlockHeight;
     
     //стає на місце при знаходженні на блоці "banner"
     if (scrollY < bannerBlockBottom) {
@@ -93,7 +93,7 @@ $( document ).ready(function() {
   // Scroll
   $('.scroll').click(function (e) {
     event.preventDefault();
-    var id = $(this).attr('href'),
+    let id = $(this).attr('href'),
       top = $(id).offset().top;
   
     $('body,html').animate({
