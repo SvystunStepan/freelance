@@ -143,4 +143,32 @@ $( document ).ready(function() {
       }
     }]
   });
+
+
+  // Отримуємо посилання на елемент з ідентифікатором "myElement"
+  const element = document.getElementById("today");
+
+  // Функція для зміни тексту в залежності від дати та часу
+  function updateTextBasedOnDateAndTime() {
+      const currentDate = new Date();
+
+      // Задаємо дати для зміни інформації
+      const date1 = new Date('2023-07-26 20:40');
+      const date2 = new Date('2023-07-26 20:41');
+      const date3 = new Date('2023-07-26 20:42');
+
+      // Перевіряємо, чи поточна дата та час більше або дорівнює заданим датам
+      if (currentDate >= date3) {
+          element.textContent = 100;//"Текст для 29 липня, 19:00";
+      } else if (currentDate >= date2) {
+          element.textContent = 200;//"Текст для 28 липня, 19:00";
+      } else if (currentDate >= date1) {
+          element.textContent = 300;//"Текст для 27 липня, 19:00";
+      } else {
+          element.textContent = 400;//"Текст до 27 липня, 19:00";
+      }
+  }
+
+  // Викликаємо функцію для перевірки дати та часу при завантаженні сторінки
+  updateTextBasedOnDateAndTime();
 }) 
