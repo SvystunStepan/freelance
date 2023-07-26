@@ -153,9 +153,9 @@ $( document ).ready(function() {
       const currentDate = new Date();
 
       // Задаємо дати для зміни інформації
-      const date1 = new Date('2023-07-26 20:40');
-      const date2 = new Date('2023-07-26 20:41');
-      const date3 = new Date('2023-07-26 20:42');
+      const date1 = new Date('2023-07-26 20:45');
+      const date2 = new Date('2023-07-26 20:46');
+      const date3 = new Date('2023-07-26 20:47');
 
       // Перевіряємо, чи поточна дата та час більше або дорівнює заданим датам
       if (currentDate >= date3) {
