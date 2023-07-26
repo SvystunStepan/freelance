@@ -159,13 +159,13 @@ $( document ).ready(function() {
 
       // Перевіряємо, чи поточна дата та час більше або дорівнює заданим датам
       if (currentDate >= date3) {
-          element.textContent = 100;//"Текст для 29 липня, 19:00";
+          element.textContent = "100";//"Текст для 29 липня";
       } else if (currentDate >= date2) {
-          element.textContent = 200;//"Текст для 28 липня, 19:00";
+          element.textContent = "200";//"Текст для 28 липня";
       } else if (currentDate >= date1) {
-          element.textContent = 300;//"Текст для 27 липня, 19:00";
+          element.textContent = "300";//"Текст для 27 липня";
       } else {
-          element.textContent = 400;//"Текст до 27 липня, 19:00";
+          element.textContent = "400";//"Текст до 27 липня";
       }
   }
 
