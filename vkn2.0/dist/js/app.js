@@ -153,10 +153,10 @@ $( document ).ready(function() {
       const currentDate = new Date();
 
       // Задаємо дати для зміни інформації             
-      const date1 = new Date('2023-07-26 21:05'); // 
-      const date2 = new Date('2023-07-26 21:06'); // 
-      const date3 = new Date('2023-07-26 21:07'); // 
-      const date4 = new Date('2023-07-26 21:08'); // 
+      const date1 = new Date('2023-07-26 21:25'); // 
+      const date2 = new Date('2023-07-26 21:26'); // 
+      const date3 = new Date('2023-07-26 21:27'); // 
+      const date4 = new Date('2023-07-26 21:28'); // 
 
       // Перевіряємо, чи поточна дата та час більше або дорівнює заданим датам
       if (currentDate >= date4) {
