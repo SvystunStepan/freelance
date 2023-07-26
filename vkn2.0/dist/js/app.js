@@ -153,22 +153,22 @@ $( document ).ready(function() {
       const currentDate = new Date();
 
       // Задаємо дати для зміни інформації             
-      const date1 = new Date('2023-07-26 21:05'); //
-      const date2 = new Date('2023-07-26 21:06'); //
-      const date3 = new Date('2023-07-26 21:07'); //
-      const date4 = new Date('2023-07-26 21:08'); //
+      const date1 = new Date('2023-07-26 21:05'); // 
+      const date2 = new Date('2023-07-26 21:06'); // 
+      const date3 = new Date('2023-07-26 21:07'); // 
+      const date4 = new Date('2023-07-26 21:08'); // 
 
       // Перевіряємо, чи поточна дата та час більше або дорівнює заданим датам
       if (currentDate >= date4) {
-          element.textContent = "400"; // 4
+          element.textContent = "0"; // 
       } else if (currentDate >= date3) {
-          element.textContent = "300 ₴"; // 3
+          element.textContent = "3 ₴"; // 
       } else if (currentDate >= date2) {
-          element.textContent = "200"; // 2
+          element.textContent = "2"; // 
       } else if (currentDate >= date1) {
-          element.textContent = "100"; // 1
+          element.textContent = "1"; // 
       } else {
-          element.textContent = "50";//"Текст до 27 липня";
+          element.textContent = "x";//"Текст до 27 липня";
       }
   }
   // Викликаємо функцію для перевірки дати та часу при завантаженні сторінки
