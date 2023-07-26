@@ -145,32 +145,71 @@ $( document ).ready(function() {
   });
 
 
-  // Отримуємо посилання на елемент з ідентифікатором "myElement"
-  const element = document.getElementById("today");
+  const element = document.getElementById("todaySamost");
 
-  // Функція для зміни тексту в залежності від дати та часу
   function updateTextBasedOnDateAndTime() {
       const currentDate = new Date();
 
-      // Задаємо дати для зміни інформації             
-      const date1 = new Date('2023-07-26 21:25'); // 
-      const date2 = new Date('2023-07-26 21:26'); // 
-      const date3 = new Date('2023-07-26 21:27'); // 
-      const date4 = new Date('2023-07-26 21:28'); // 
+      const date1 = new Date('2023-07-26 21:25'); // 2399 ₴
+      const date2 = new Date('2023-07-26 21:26'); // 2499 ₴
+      const date3 = new Date('2023-07-26 21:27'); // 2699 ₴
+      const date4 = new Date('2023-07-26 21:28'); // 5000 ₴
 
-      // Перевіряємо, чи поточна дата та час більше або дорівнює заданим датам
       if (currentDate >= date4) {
-          element.textContent = "0"; // 
+          element.textContent = "5000 ₴";
       } else if (currentDate >= date3) {
-          element.textContent = "3 ₴"; // 
+          element.textContent = "2699 ₴";
       } else if (currentDate >= date2) {
-          element.textContent = "2"; // 
+          element.textContent = "2499 ₴";
       } else if (currentDate >= date1) {
-          element.textContent = "1"; // 
+          element.textContent = "2399 ₴";
       } else {
-          element.textContent = "x";//"Текст до 27 липня";
+          element.textContent = "2299 ₴";
       }
   }
-  // Викликаємо функцію для перевірки дати та часу при завантаженні сторінки
   updateTextBasedOnDateAndTime();
+
+  // Функція для зміни тексту в інформаційному блоку
+  function updateTextForBlock(blockId, newText) {
+    const block = document.getElementById(blockId);
+    block.querySelector('p').textContent = newText;
+}
+
+  // Функція для зміни інформації в залежності від дати та часу для декількох блоків
+  function updateInfoBlocksBasedOnDateAndTime() {
+    const currentDate = new Date();
+
+    // Задайте дати для зміни інформації для кожного блоку
+    const date1 = new Date('2023-07-27 19:00');
+    const date2 = new Date('2023-07-28 19:00');
+    const date3 = new Date('2023-07-29 19:00');
+    const date4 = new Date('2023-07-29 19:00');
+
+    if (currentDate >= date4) {
+        updateTextForBlock('block1', 'Текст для блоку 1 на 29 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 29 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 29 липня, 19:00');
+    } else if (currentDate >= date3) {
+        updateTextForBlock('block1', 'Текст для блоку 1 на 28 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
+    } else if (currentDate >= date2) {
+        updateTextForBlock('block1', 'Текст для блоку 1 на 28 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
+    } else if (currentDate >= date1) {
+        updateTextForBlock('block1', 'Текст для блоку 1 на 27 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 27 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 на 27 липня, 19:00');
+    } else { //сама низька ціна
+        updateTextForBlock('block1', 'Текст для блоку 1 до 27 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 до 27 липня, 19:00');
+        updateTextForBlock('block2', 'Текст для блоку 2 до 27 липня, 19:00');
+    }
+}
+
+// Викликаємо функцію для оновлення інформаційних блоків при завантаженні сторінки
+updateInfoBlocksBasedOnDateAndTime();
+
+
 }) 
