@@ -152,23 +152,25 @@ $( document ).ready(function() {
   function updateTextBasedOnDateAndTime() {
       const currentDate = new Date();
 
-      // Задаємо дати для зміни інформації
-      const date1 = new Date('2023-07-26 20:45');
-      const date2 = new Date('2023-07-26 20:46');
-      const date3 = new Date('2023-07-26 20:47');
+      // Задаємо дати для зміни інформації             
+      const date1 = new Date('2023-07-26 20:55'); //
+      const date2 = new Date('2023-07-26 20:56'); //
+      const date3 = new Date('2023-07-26 20:57'); //
+      const date4 = new Date('2023-07-26 20:58'); //
 
       // Перевіряємо, чи поточна дата та час більше або дорівнює заданим датам
-      if (currentDate >= date3) {
-          element.textContent = "100";//"Текст для 29 липня";
+      if (currentDate >= date4) {
+          element.textContent = "400";
+      } else if (currentDate >= date3) {
+          element.textContent = "300 ₴";
       } else if (currentDate >= date2) {
-          element.textContent = "200";//"Текст для 28 липня";
+          element.textContent = "200";
       } else if (currentDate >= date1) {
-          element.textContent = "300";//"Текст для 27 липня";
+          element.textContent = "100";
       } else {
-          element.textContent = "400";//"Текст до 27 липня";
+          element.textContent = "50";//"Текст до 27 липня";
       }
   }
-
   // Викликаємо функцію для перевірки дати та часу при завантаженні сторінки
   updateTextBasedOnDateAndTime();
 }) 
