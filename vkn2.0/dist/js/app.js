@@ -170,41 +170,43 @@ $( document ).ready(function() {
   updateTextBasedOnDateAndTime();
 
   // Функція для зміни тексту в інформаційному блоку
-  function updateTextForBlock(blockId, newText) {
-    const block = document.getElementById(blockId);
-    block.querySelector('p').textContent = newText;
+  function updateTextForBlock(priceTodayId, newText) {
+    const priceToday = document.getElementById(priceTodayId);
+    priceToday.querySelector('b').textContent = newText;
 }
-
-  // Функція для зміни інформації в залежності від дати та часу для декількох блоків
   function updateInfoBlocksBasedOnDateAndTime() {
     const currentDate = new Date();
 
     // Задайте дати для зміни інформації для кожного блоку
-    const date1 = new Date('2023-07-27 19:00');
-    const date2 = new Date('2023-07-28 19:00');
-    const date3 = new Date('2023-07-29 19:00');
-    const date4 = new Date('2023-07-29 19:00');
+    const date1 = new Date('2023-07-26 21:50');
+    const date2 = new Date('2023-07-27 21:51');
+    const date3 = new Date('2023-07-28 21:52');
+    const date4 = new Date('2023-07-30 21:53');
+    /* const date1 = new Date('2023-07-26 19:00');
+    const date2 = new Date('2023-07-27 19:00');
+    const date3 = new Date('2023-07-28 21:00');
+    const date4 = new Date('2023-07-30 21:00'); */
 
     if (currentDate >= date4) {
-        updateTextForBlock('block1', 'Текст для блоку 1 на 29 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 29 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 29 липня, 19:00');
+        updateTextForBlock('priceToday1', '5000 ₴');
+        updateTextForBlock('priceToday2', '6400 ₴');
+        updateTextForBlock('priceToday3', '7000 ₴');
     } else if (currentDate >= date3) {
-        updateTextForBlock('block1', 'Текст для блоку 1 на 28 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
+        updateTextForBlock('priceToday1', '2699 ₴');
+        updateTextForBlock('priceToday2', '3499 ₴');
+        updateTextForBlock('priceToday3', '3999 ₴');
     } else if (currentDate >= date2) {
-        updateTextForBlock('block1', 'Текст для блоку 1 на 28 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 28 липня, 19:00');
+        updateTextForBlock('priceToday1', '2499 ₴');
+        updateTextForBlock('priceToday2', '3199 ₴');
+        updateTextForBlock('priceToday3', '3699 ₴');
     } else if (currentDate >= date1) {
-        updateTextForBlock('block1', 'Текст для блоку 1 на 27 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 27 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 на 27 липня, 19:00');
+        updateTextForBlock('priceToday1', '2399 ₴');
+        updateTextForBlock('priceToday2', '3099 ₴');
+        updateTextForBlock('priceToday3', '3599 ₴');
     } else { //сама низька ціна
-        updateTextForBlock('block1', 'Текст для блоку 1 до 27 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 до 27 липня, 19:00');
-        updateTextForBlock('block2', 'Текст для блоку 2 до 27 липня, 19:00');
+        updateTextForBlock('priceToday1', '2299 ₴');
+        updateTextForBlock('priceToday2', '2999 ₴');
+        updateTextForBlock('priceToday3', '3499 ₴');
     }
 }
 
