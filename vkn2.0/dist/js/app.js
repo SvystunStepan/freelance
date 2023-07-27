@@ -145,47 +145,90 @@ $( document ).ready(function() {
   });
 
 
-  const element = document.getElementById("todaySamost");
+  const element1 = document.getElementById("todaySamost");
+  function updateTextBasedOnDateAndTimeSamost() {
+    const currentDate = new Date();
 
-  function updateTextBasedOnDateAndTime() {
-      const currentDate = new Date();
+    const date1 = new Date('2023-07-26 19:00'); // 2399 ₴
+    const date2 = new Date('2023-07-27 19:00'); // 2499 ₴
+    const date3 = new Date('2023-07-28 21:00'); // 2699 ₴
+    const date4 = new Date('2023-07-30 21:00'); // 5000 ₴
 
-      const date1 = new Date('2023-07-26 21:25'); // 2399 ₴
-      const date2 = new Date('2023-07-26 21:26'); // 2499 ₴
-      const date3 = new Date('2023-07-26 21:27'); // 2699 ₴
-      const date4 = new Date('2023-07-26 21:28'); // 5000 ₴
-
-      if (currentDate >= date4) {
-          element.textContent = "5000 ₴";
-      } else if (currentDate >= date3) {
-          element.textContent = "2699 ₴";
-      } else if (currentDate >= date2) {
-          element.textContent = "2499 ₴";
-      } else if (currentDate >= date1) {
-          element.textContent = "2399 ₴";
-      } else {
-          element.textContent = "2299 ₴";
-      }
+    if (currentDate >= date4) {
+        element1.textContent = "5000 ₴";
+    } else if (currentDate >= date3) {
+        element1.textContent = "2699 ₴";
+    } else if (currentDate >= date2) {
+        element1.textContent = "2499 ₴";
+    } else if (currentDate >= date1) {
+        element1.textContent = "2399 ₴";
+    } else {
+        element1.textContent = "2299 ₴";
+    }
   }
-  updateTextBasedOnDateAndTime();
+  updateTextBasedOnDateAndTimeSamost();
 
-  // Функція для зміни тексту в інформаційному блоку
+
+  const element2 = document.getElementById("todayPsyh");
+  function updateTextBasedOnDateAndTimePsyh() {
+    const currentDate = new Date();
+
+    const date1 = new Date('2023-07-26 19:00'); // 3099 ₴
+    const date2 = new Date('2023-07-27 19:00'); // 3199 ₴
+    const date3 = new Date('2023-07-28 21:00'); // 3499 ₴
+    const date4 = new Date('2023-07-30 21:00'); // 6400 ₴
+
+    if (currentDate >= date4) {
+        element2.textContent = "6400 ₴";
+    } else if (currentDate >= date3) {
+        element2.textContent = "3499 ₴";
+    } else if (currentDate >= date2) {
+        element2.textContent = "3199 ₴";
+    } else if (currentDate >= date1) {
+        element2.textContent = "3099 ₴";
+    } else {
+        element2.textContent = "2999 ₴";
+    }
+  }
+  updateTextBasedOnDateAndTimePsyh();
+
+
+  const element3 = document.getElementById("todayMax");
+  function updateTextBasedOnDateAndTimeMax() {
+    const currentDate = new Date();
+
+    const date1 = new Date('2023-07-26 19:00'); // 3499 ₴
+    const date2 = new Date('2023-07-27 19:00'); // 3599 ₴
+    const date3 = new Date('2023-07-28 21:00'); // 3999 ₴
+    const date4 = new Date('2023-07-30 21:00'); // 7000 ₴
+
+    if (currentDate >= date4) {
+        element3.textContent = "7000 ₴";
+    } else if (currentDate >= date3) {
+        element3.textContent = "3999 ₴";
+    } else if (currentDate >= date2) {
+        element3.textContent = "3699 ₴";
+    } else if (currentDate >= date1) {
+        element3.textContent = "3599 ₴";
+    } else {
+        element3.textContent = "3499 ₴";
+    }
+  }
+  updateTextBasedOnDateAndTimeMax();
+
+  /* // Функція для зміни тексту в інформаційному блоку
   function updateTextForBlock(priceTodayId, newText) {
     const priceToday = document.getElementById(priceTodayId);
     priceToday.querySelector('b').textContent = newText;
-}
+  }
   function updateInfoBlocksBasedOnDateAndTime() {
     const currentDate = new Date();
 
     // Задайте дати для зміни інформації для кожного блоку
-    const date1 = new Date('2023-07-26 21:50');
-    const date2 = new Date('2023-07-27 21:51');
-    const date3 = new Date('2023-07-28 21:52');
-    const date4 = new Date('2023-07-30 21:53');
-    /* const date1 = new Date('2023-07-26 19:00');
+    const date1 = new Date('2023-07-26 19:00');
     const date2 = new Date('2023-07-27 19:00');
     const date3 = new Date('2023-07-28 21:00');
-    const date4 = new Date('2023-07-30 21:00'); */
+    const date4 = new Date('2023-07-30 21:00');
 
     if (currentDate >= date4) {
         updateTextForBlock('priceToday1', '5000 ₴');
@@ -208,10 +251,6 @@ $( document ).ready(function() {
         updateTextForBlock('priceToday2', '2999 ₴');
         updateTextForBlock('priceToday3', '3499 ₴');
     }
-}
-
-// Викликаємо функцію для оновлення інформаційних блоків при завантаженні сторінки
-updateInfoBlocksBasedOnDateAndTime();
-
+  }*/
 
 }) 
