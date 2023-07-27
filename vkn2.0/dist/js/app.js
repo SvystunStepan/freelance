@@ -144,113 +144,53 @@ $( document ).ready(function() {
     }]
   });
 
-
+  // Функція для оновлення тексту елемента на основі дати та ціни
+  function updateTextBasedOnDateAndTime(currentDate, datePrices) {
+    let text = ""; // Текст за замовчуванням, якщо не співпадає з жодною датою
+    for (const [date, price] of datePrices) {
+      if (currentDate >= date) {
+        text = price;
+      } else {
+        break; 
+      }
+    }
+    return text;
+  }
+  const currentDate = new Date();
+  const samostDates = [
+    [new Date('2023-07-25 19:00'), "2299 ₴"],
+    [new Date('2023-07-26 19:00'), "2399 ₴"],
+    [new Date('2023-07-27 19:00'), "2499 ₴"],
+    [new Date('2023-07-28 21:00'), "2699 ₴"],
+    [new Date('2023-07-30 21:00'), "5000 ₴"]
+  ];
+  const psyhDates = [
+    [new Date('2023-07-25 19:00'), "2999 ₴"],
+    [new Date('2023-07-26 19:00'), "3099 ₴"],
+    [new Date('2023-07-27 19:00'), "3199 ₴"],
+    [new Date('2023-07-28 21:00'), "3499 ₴"],
+    [new Date('2023-07-30 21:00'), "6400 ₴"]
+  ];
+  const maxDates = [
+    [new Date('2023-07-25 19:00'), "3499 ₴"],
+    [new Date('2023-07-26 19:00'), "3599 ₴"],
+    [new Date('2023-07-27 19:00'), "3699 ₴"],
+    [new Date('2023-07-28 21:00'), "3999 ₴"],
+    [new Date('2023-07-30 21:00'), "7000 ₴"] // ці дати ОДНАКОВІ
+  ];
   const element1 = document.getElementById("todaySamost");
-  function updateTextBasedOnDateAndTimeSamost() {
-    const currentDate = new Date();
-
-    const date1 = new Date('2023-07-26 19:00'); // 2399 ₴
-    const date2 = new Date('2023-07-27 19:00'); // 2499 ₴
-    const date3 = new Date('2023-07-28 21:00'); // 2699 ₴
-    const date4 = new Date('2023-07-30 21:00'); // 5000 ₴
-
-    if (currentDate >= date4) {
-        element1.textContent = "5000 ₴";
-    } else if (currentDate >= date3) {
-        element1.textContent = "2699 ₴";
-    } else if (currentDate >= date2) {
-        element1.textContent = "2499 ₴";
-    } else if (currentDate >= date1) {
-        element1.textContent = "2399 ₴";
-    } else {
-        element1.textContent = "2299 ₴";
-    }
-  }
-  updateTextBasedOnDateAndTimeSamost();
-
-
+  element1.textContent = updateTextBasedOnDateAndTime(currentDate, samostDates);
   const element2 = document.getElementById("todayPsyh");
-  function updateTextBasedOnDateAndTimePsyh() {
-    const currentDate = new Date();
-
-    const date1 = new Date('2023-07-26 19:00'); // 3099 ₴
-    const date2 = new Date('2023-07-27 19:00'); // 3199 ₴
-    const date3 = new Date('2023-07-28 21:00'); // 3499 ₴
-    const date4 = new Date('2023-07-30 21:00'); // 6400 ₴
-
-    if (currentDate >= date4) {
-        element2.textContent = "6400 ₴";
-    } else if (currentDate >= date3) {
-        element2.textContent = "3499 ₴";
-    } else if (currentDate >= date2) {
-        element2.textContent = "3199 ₴";
-    } else if (currentDate >= date1) {
-        element2.textContent = "3099 ₴";
-    } else {
-        element2.textContent = "2999 ₴";
-    }
-  }
-  updateTextBasedOnDateAndTimePsyh();
-
-
+  element2.textContent = updateTextBasedOnDateAndTime(currentDate, psyhDates);
   const element3 = document.getElementById("todayMax");
-  function updateTextBasedOnDateAndTimeMax() {
-    const currentDate = new Date();
+  element3.textContent = updateTextBasedOnDateAndTime(currentDate, maxDates);
 
-    const date1 = new Date('2023-07-26 19:00'); // 3499 ₴
-    const date2 = new Date('2023-07-27 19:00'); // 3599 ₴
-    const date3 = new Date('2023-07-28 21:00'); // 3999 ₴
-    const date4 = new Date('2023-07-30 21:00'); // 7000 ₴
-
-    if (currentDate >= date4) {
-        element3.textContent = "7000 ₴";
-    } else if (currentDate >= date3) {
-        element3.textContent = "3999 ₴";
-    } else if (currentDate >= date2) {
-        element3.textContent = "3699 ₴";
-    } else if (currentDate >= date1) {
-        element3.textContent = "3599 ₴";
-    } else {
-        element3.textContent = "3499 ₴";
-    }
+  // зняти закреслення з "Повна ціна *000 ₴" 
+  let currentDate1 = new Date();
+  let targetDate = new Date("2023-07-30T21:00:00"); // ці дати ОДНАКОВІ
+  if (currentDate1.getTime() >= targetDate.getTime()) {
+    document.getElementById("price-update1").style.textDecoration = "none";
+    document.getElementById("price-update2").style.textDecoration = "none";
+    document.getElementById("price-update3").style.textDecoration = "none";
   }
-  updateTextBasedOnDateAndTimeMax();
-
-  /* // Функція для зміни тексту в інформаційному блоку
-  function updateTextForBlock(priceTodayId, newText) {
-    const priceToday = document.getElementById(priceTodayId);
-    priceToday.querySelector('b').textContent = newText;
-  }
-  function updateInfoBlocksBasedOnDateAndTime() {
-    const currentDate = new Date();
-
-    // Задайте дати для зміни інформації для кожного блоку
-    const date1 = new Date('2023-07-26 19:00');
-    const date2 = new Date('2023-07-27 19:00');
-    const date3 = new Date('2023-07-28 21:00');
-    const date4 = new Date('2023-07-30 21:00');
-
-    if (currentDate >= date4) {
-        updateTextForBlock('priceToday1', '5000 ₴');
-        updateTextForBlock('priceToday2', '6400 ₴');
-        updateTextForBlock('priceToday3', '7000 ₴');
-    } else if (currentDate >= date3) {
-        updateTextForBlock('priceToday1', '2699 ₴');
-        updateTextForBlock('priceToday2', '3499 ₴');
-        updateTextForBlock('priceToday3', '3999 ₴');
-    } else if (currentDate >= date2) {
-        updateTextForBlock('priceToday1', '2499 ₴');
-        updateTextForBlock('priceToday2', '3199 ₴');
-        updateTextForBlock('priceToday3', '3699 ₴');
-    } else if (currentDate >= date1) {
-        updateTextForBlock('priceToday1', '2399 ₴');
-        updateTextForBlock('priceToday2', '3099 ₴');
-        updateTextForBlock('priceToday3', '3599 ₴');
-    } else { //сама низька ціна
-        updateTextForBlock('priceToday1', '2299 ₴');
-        updateTextForBlock('priceToday2', '2999 ₴');
-        updateTextForBlock('priceToday3', '3499 ₴');
-    }
-  }*/
-
 }) 
