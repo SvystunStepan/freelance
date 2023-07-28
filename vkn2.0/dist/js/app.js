@@ -1,3 +1,66 @@
+$(document).ready(function() {
+  // Сховати ВІДЕО-БЛОКИ і показати верхній вектор з хедеру
+  let currentDate2 = new Date();
+  let targetDate2 = new Date("2023-07-29T21:00:00"); // субота 21:00
+
+  if (currentDate2.getTime() >= targetDate2.getTime()) {
+    document.getElementById("video-1").style.display = "none";
+    document.getElementById("video-2").style.display = "none";
+    document.getElementById("video-3").style.display = "none";
+  }
+});
+
+// Функція для оновлення ціни відносно дати
+function updateTextBasedOnDateAndTime(currentDate, datePrices) {
+  let text = ""; // Текст за замовчуванням, якщо не співпадає з жодною датою
+  for (const [date, price] of datePrices) {
+    if (currentDate >= date) {
+      text = price;
+    } else {
+      break; 
+    }
+  }
+  return text;
+}
+const currentDate = new Date();
+const samostDates = [
+  [new Date('2023-07-25 19:00'), "2299\u00A0₴"],
+  [new Date('2023-07-26 19:00'), "2399\u00A0₴"],
+  [new Date('2023-07-27 19:00'), "2499\u00A0₴"],
+  [new Date('2023-07-28 21:00'), "2699\u00A0₴"],
+  [new Date('2023-07-30 21:00'), "5000\u00A0₴"]
+];
+const psyhDates = [
+  [new Date('2023-07-25 19:00'), "2999\u00A0₴"],
+  [new Date('2023-07-26 19:00'), "3099\u00A0₴"],
+  [new Date('2023-07-27 19:00'), "3199\u00A0₴"],
+  [new Date('2023-07-28 21:00'), "3499\u00A0₴"],
+  [new Date('2023-07-30 21:00'), "6400\u00A0₴"]
+];
+const maxDates = [
+  [new Date('2023-07-25 19:00'), "3499\u00A0₴"],
+  [new Date('2023-07-26 19:00'), "3599\u00A0₴"],
+  [new Date('2023-07-27 19:00'), "3699\u00A0₴"],
+  [new Date('2023-07-28 21:00'), "3999\u00A0₴"],
+  [new Date('2023-07-30 21:00'), "7000\u00A0₴"] // ці дати ОДНАКОВІ
+];
+const element1 = document.getElementById("todaySamost");
+element1.textContent = updateTextBasedOnDateAndTime(currentDate, samostDates);
+const element2 = document.getElementById("todayPsyh");
+element2.textContent = updateTextBasedOnDateAndTime(currentDate, psyhDates);
+const element3 = document.getElementById("todayMax");
+element3.textContent = updateTextBasedOnDateAndTime(currentDate, maxDates);
+
+// зняти закреслення з "Повна ціна *000 ₴" 
+let currentDate1 = new Date();
+let targetDate = new Date("2023-07-30T21:00:00"); // ці дати ОДНАКОВІ
+if (currentDate1.getTime() >= targetDate.getTime()) {
+  document.getElementById("price-update1").style.textDecoration = "none";
+  document.getElementById("price-update2").style.textDecoration = "none";
+  document.getElementById("price-update3").style.textDecoration = "none";
+}
+
+
 !function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",classToAddForFullView:"full-visible",removeClassAfterAnimation:!1,offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1,scrollBox:window};a.extend(c,b);var d=this,e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()};return this.checkElements=function(){var b,f;c.scrollHorizontal?(b=Math.max(a("html").scrollLeft(),a("body").scrollLeft(),a(window).scrollLeft()),f=b+e.width):(b=Math.max(a("html").scrollTop(),a("body").scrollTop(),a(window).scrollTop()),f=b+e.height),d.each(function(){var d=a(this),g={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-add-class-full-view")&&(h.classToAddForFullView=d.data("vp-add-class-full-view")),d.data("vp-keep-add-class")&&(h.removeClassAfterAnimation=d.data("vp-remove-after-animation")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(g,c),a.extend(g,h),!d.data("vp-animated")||g.repeat){String(g.offset).indexOf("%")>0&&(g.offset=parseInt(g.offset)/100*e.height);var i=g.scrollHorizontal?d.offset().left:d.offset().top,j=g.scrollHorizontal?i+d.width():i+d.height(),k=Math.round(i)+g.offset,l=g.scrollHorizontal?k+d.width():k+d.height();g.invertBottomOffset&&(l-=2*g.offset),k<f&&l>b?(d.removeClass(g.classToRemove),d.addClass(g.classToAdd),g.callbackFunction(d,"add"),j<=f&&i>=b?d.addClass(g.classToAddForFullView):d.removeClass(g.classToAddForFullView),d.data("vp-animated",!0),g.removeClassAfterAnimation&&d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){d.removeClass(g.classToAdd)})):d.hasClass(g.classToAdd)&&g.repeat&&(d.removeClass(g.classToAdd+" "+g.classToAddForFullView),g.callbackFunction(d,"remove"),d.data("vp-animated",!1))}})},("ontouchstart"in window||"onmsgesturechange"in window)&&a(document).bind("touchmove MSPointerMove pointermove",this.checkElements),a(c.scrollBox).bind("load scroll",this.checkElements),a(window).resize(function(b){e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
 
 $( document ).ready(function() {
@@ -143,54 +206,4 @@ $( document ).ready(function() {
       }
     }]
   });
-
-  // Функція для оновлення тексту елемента на основі дати та ціни
-  function updateTextBasedOnDateAndTime(currentDate, datePrices) {
-    let text = ""; // Текст за замовчуванням, якщо не співпадає з жодною датою
-    for (const [date, price] of datePrices) {
-      if (currentDate >= date) {
-        text = price;
-      } else {
-        break; 
-      }
-    }
-    return text;
-  }
-  const currentDate = new Date();
-  const samostDates = [
-    [new Date('2023-07-25 19:00'), "2299 ₴"],
-    [new Date('2023-07-26 19:00'), "2399 ₴"],
-    [new Date('2023-07-27 19:00'), "2499 ₴"],
-    [new Date('2023-07-28 21:00'), "2699 ₴"],
-    [new Date('2023-07-30 21:00'), "5000 ₴"]
-  ];
-  const psyhDates = [
-    [new Date('2023-07-25 19:00'), "2999 ₴"],
-    [new Date('2023-07-26 19:00'), "3099 ₴"],
-    [new Date('2023-07-27 19:00'), "3199 ₴"],
-    [new Date('2023-07-28 21:00'), "3499 ₴"],
-    [new Date('2023-07-30 21:00'), "6400 ₴"]
-  ];
-  const maxDates = [
-    [new Date('2023-07-25 19:00'), "3499 ₴"],
-    [new Date('2023-07-26 19:00'), "3599 ₴"],
-    [new Date('2023-07-27 19:00'), "3699 ₴"],
-    [new Date('2023-07-28 21:00'), "3999 ₴"],
-    [new Date('2023-07-30 21:00'), "7000 ₴"] // ці дати ОДНАКОВІ
-  ];
-  const element1 = document.getElementById("todaySamost");
-  element1.textContent = updateTextBasedOnDateAndTime(currentDate, samostDates);
-  const element2 = document.getElementById("todayPsyh");
-  element2.textContent = updateTextBasedOnDateAndTime(currentDate, psyhDates);
-  const element3 = document.getElementById("todayMax");
-  element3.textContent = updateTextBasedOnDateAndTime(currentDate, maxDates);
-
-  // зняти закреслення з "Повна ціна *000 ₴" 
-  let currentDate1 = new Date();
-  let targetDate = new Date("2023-07-30T21:00:00"); // ці дати ОДНАКОВІ
-  if (currentDate1.getTime() >= targetDate.getTime()) {
-    document.getElementById("price-update1").style.textDecoration = "none";
-    document.getElementById("price-update2").style.textDecoration = "none";
-    document.getElementById("price-update3").style.textDecoration = "none";
-  }
 }) 
