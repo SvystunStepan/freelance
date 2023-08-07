@@ -33,6 +33,14 @@ $( document ).ready(function() {
     classToAdd: 'visible animated zoomIn',
     offset: '30%'
   });
+  $('.up-head').addClass("hidden_animation").viewportChecker({
+    classToAdd: 'visible animated fadeInUp',
+    offset: '0%'
+  });
+  $('.up-head-1').addClass("hidden_animation").viewportChecker({
+    classToAdd: 'visible animated-1 fadeInUp',
+    offset: '0%'
+  });
   $('.up').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInUp',
     offset: '20%'
@@ -59,7 +67,7 @@ $( document ).ready(function() {
   });
   $('.down').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInDown',
-    offset: '20%'
+    offset: '0%'
   });
   $('.right, .top-10-block').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInRight',
