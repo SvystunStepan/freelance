@@ -63,7 +63,7 @@ $( document ).ready(function() {
   });
   $('.up-5').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated-5 fadeInUp',
-    offset: '20%'
+    offset: '0%'
   });
   $('.down').addClass("hidden_animation").viewportChecker({
     classToAdd: 'visible animated fadeInDown',
