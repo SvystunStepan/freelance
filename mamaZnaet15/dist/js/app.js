@@ -136,43 +136,6 @@ $( document ).ready(function() {
     offset: '30%'
   });
 
-  /* //фіксована кнопка desctop
-  window.addEventListener('scroll', function() {
-    let block = document.querySelector('.float');
-    let priceBlock = document.getElementById('price');
-    let bannerBlock = document.getElementById('banner');
-    let scrollY = window.scrollY;
-    let priceBlockTop = priceBlock.offsetTop;
-    let priceBlockHeight = priceBlock.offsetHeight;
-    let priceBlockBottom = priceBlockTop + priceBlockHeight;
-    let bannerBlockTop = bannerBlock.offsetTop;
-    let bannerBlockHeight = bannerBlock.offsetHeight;
-    let bannerBlockBottom = bannerBlockTop + bannerBlockHeight;
-
-    //стає на місце при знаходженні на блоці "banner"
-    if (scrollY < bannerBlockBottom) {
-      block.style.position = 'relative'; //static
-      // block.style.bottom = '0px';
-      // block.style.left = '50%';
-      // block.style.transform = 'translateX(-50%)';
-      // block.style.top = '0';
-      // block.style.bottom = '0';
-    } else {
-      block.style.position = 'fixed';
-      block.style.top = 'auto';
-      block.style.bottom = '20px';
-      block.style.left = '50%';
-      block.style.transform = 'translateX(-50%)';
-    }
-
-    //зникає при знаходженні на блоці "price"
-    if (scrollY > priceBlockTop && scrollY < priceBlockBottom) {
-      block.style.display = 'none';
-    } else {
-      block.style.display = 'block';
-    }
-  }); */
-
   // Scroll
   $('.scroll').click(function (e) {
     event.preventDefault();
@@ -183,8 +146,6 @@ $( document ).ready(function() {
       scrollTop: top - -20
     }, 1500);
   });
-
-
 
   //головний слайдер фото
   $('#slider1').slick({
