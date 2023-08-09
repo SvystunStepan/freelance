@@ -1,26 +1,4 @@
-//nav
-$('#nav').slick({
-  infinite: true, // Нескінченне перелистування слайдів
-  slidesToShow: 7, // Кількість видимих слайдів одночасно
-  slidesToScroll: 1, // Кількість слайдів для прокручування за один раз
-  autoplay: true, // Автоматичне перелистування
-  autoplaySpeed: 0, // Час перелистування між слайдами (0 мс - без паузи)
-  speed: 5000, // Час переміщення слайду (5000 мс - 5 секунд, можна змінити за потребою)
-  cssEase: 'linear', // Тип ефекту переходу між слайдами (плавний)
-  arrows: false, // Приховати стрілки переключення слайдів (за потребою)
-  dots: false, // Приховати крапки навігації (за потребою)
-  responsive: [
-    {
-      breakpoint: 768, // Розмір, при якому мобільна версія застосовується
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        speed: 15000
-      }
-    }
-  ]
-});
-/* Zepto(function($) {
+Zepto(function($) {
   $(window).on('load', function() {
     $.each($(".roller"), function(index, item) {
       const wrapper = $("<div />", {
@@ -51,7 +29,7 @@ $('#nav').slick({
       });
     });
   })
-}); */
+});
 
 
 !function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",classToAddForFullView:"full-visible",removeClassAfterAnimation:!1,offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1,scrollBox:window};a.extend(c,b);var d=this,e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()};return this.checkElements=function(){var b,f;c.scrollHorizontal?(b=Math.max(a("html").scrollLeft(),a("body").scrollLeft(),a(window).scrollLeft()),f=b+e.width):(b=Math.max(a("html").scrollTop(),a("body").scrollTop(),a(window).scrollTop()),f=b+e.height),d.each(function(){var d=a(this),g={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-add-class-full-view")&&(h.classToAddForFullView=d.data("vp-add-class-full-view")),d.data("vp-keep-add-class")&&(h.removeClassAfterAnimation=d.data("vp-remove-after-animation")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(g,c),a.extend(g,h),!d.data("vp-animated")||g.repeat){String(g.offset).indexOf("%")>0&&(g.offset=parseInt(g.offset)/100*e.height);var i=g.scrollHorizontal?d.offset().left:d.offset().top,j=g.scrollHorizontal?i+d.width():i+d.height(),k=Math.round(i)+g.offset,l=g.scrollHorizontal?k+d.width():k+d.height();g.invertBottomOffset&&(l-=2*g.offset),k<f&&l>b?(d.removeClass(g.classToRemove),d.addClass(g.classToAdd),g.callbackFunction(d,"add"),j<=f&&i>=b?d.addClass(g.classToAddForFullView):d.removeClass(g.classToAddForFullView),d.data("vp-animated",!0),g.removeClassAfterAnimation&&d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){d.removeClass(g.classToAdd)})):d.hasClass(g.classToAdd)&&g.repeat&&(d.removeClass(g.classToAdd+" "+g.classToAddForFullView),g.callbackFunction(d,"remove"),d.data("vp-animated",!1))}})},("ontouchstart"in window||"onmsgesturechange"in window)&&a(document).bind("touchmove MSPointerMove pointermove",this.checkElements),a(c.scrollBox).bind("load scroll",this.checkElements),a(window).resize(function(b){e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
@@ -159,43 +137,6 @@ $( document ).ready(function() {
     offset: '30%'
   });
 
-  /* //фіксована кнопка desctop
-  window.addEventListener('scroll', function() {
-    let block = document.querySelector('.float');
-    let priceBlock = document.getElementById('price');
-    let bannerBlock = document.getElementById('banner');
-    let scrollY = window.scrollY;
-    let priceBlockTop = priceBlock.offsetTop;
-    let priceBlockHeight = priceBlock.offsetHeight;
-    let priceBlockBottom = priceBlockTop + priceBlockHeight;
-    let bannerBlockTop = bannerBlock.offsetTop;
-    let bannerBlockHeight = bannerBlock.offsetHeight;
-    let bannerBlockBottom = bannerBlockTop + bannerBlockHeight;
-
-    //стає на місце при знаходженні на блоці "banner"
-    if (scrollY < bannerBlockBottom) {
-      block.style.position = 'relative'; //static
-      // block.style.bottom = '0px';
-      // block.style.left = '50%';
-      // block.style.transform = 'translateX(-50%)';
-      // block.style.top = '0';
-      // block.style.bottom = '0';
-    } else {
-      block.style.position = 'fixed';
-      block.style.top = 'auto';
-      block.style.bottom = '20px';
-      block.style.left = '50%';
-      block.style.transform = 'translateX(-50%)';
-    }
-
-    //зникає при знаходженні на блоці "price"
-    if (scrollY > priceBlockTop && scrollY < priceBlockBottom) {
-      block.style.display = 'none';
-    } else {
-      block.style.display = 'block';
-    }
-  }); */
-
   // Scroll
   $('.scroll').click(function (e) {
     event.preventDefault();
@@ -206,8 +147,6 @@ $( document ).ready(function() {
       scrollTop: top - -20
     }, 1500);
   });
-
-
 
   //головний слайдер фото
   $('#slider1').slick({
