@@ -220,8 +220,10 @@ $( document ).ready(function() {
     arrows.forEach((arrow, i) => {
       if (i === index) {
         arrow.style.transform = "rotate(-135deg)";
+        arrow.style.marginTop = "6px";
       } else {
         arrow.style.transform = "rotate(45deg)";
+        arrow.style.marginTop = "-6px";
       }
     });
   };
