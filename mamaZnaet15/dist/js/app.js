@@ -243,41 +243,41 @@ $( document ).ready(function() {
     accordion.addEventListener("click", () => active(contents[i], i));
   });
 
-  //PRICE-TIMER
+
+  //PRICE-TIMER/* ss */
   const hoursDisplay = document.querySelector('.hours');
-const minutesDisplay = document.querySelector('.minutes');
-const secondsDisplay = document.querySelector('.seconds');
+  const minutesDisplay = document.querySelector('.minutes');
+  const secondsDisplay = document.querySelector('.seconds');
 
-function getTimeUntilMidnight() {
-    const now = new Date();
-    const midnight = new Date(now);
-    midnight.setHours(24, 0, 0, 0); // Set to next midnight
+  function getTimeUntilMidnight() {
+      const now = new Date();
+      const midnight = new Date(now);
+      midnight.setHours(24, 0, 0, 0); // Set to next midnight
 
-    const timeDifference = midnight - now;
-    return Math.floor(timeDifference / 1000); // Convert to seconds
-}
+      const timeDifference = midnight - now;
+      return Math.floor(timeDifference / 1000); // Convert to seconds
+  }
 
-let remainingTime = getTimeUntilMidnight();
+  let remainingTime = getTimeUntilMidnight();
 
-function updateTimerDisplay() {
-    const hours = Math.floor(remainingTime / 3600);
-    const minutes = Math.floor((remainingTime % 3600) / 60);
-    const seconds = remainingTime % 60;
+  function updateTimerDisplay() {
+      const hours = Math.floor(remainingTime / 3600);
+      const minutes = Math.floor((remainingTime % 3600) / 60);
+      const seconds = remainingTime % 60;
 
-    hoursDisplay.textContent = hours.toString().padStart(2, '0');
-    minutesDisplay.textContent = minutes.toString().padStart(2, '0');
-    secondsDisplay.textContent = seconds.toString().padStart(2, '0');
-}
+      hoursDisplay.textContent = hours.toString().padStart(2, '0');
+      minutesDisplay.textContent = minutes.toString().padStart(2, '0');
+      secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+  }
 
-function updateTimer() {
-    if (remainingTime > 0) {
-        remainingTime--;
-        updateTimerDisplay();
-    }
-}
+  function updateTimer() {
+      if (remainingTime > 0) {
+          remainingTime--;
+          updateTimerDisplay();
+      }
+  }
 
-// Update the timer every second
-setInterval(updateTimer, 1000);
-
+  // Update the timer every second
+  setInterval(updateTimer, 1000);
 
 })
