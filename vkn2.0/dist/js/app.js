@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  // Сховати ВІДЕО-БЛОКИ і показати верхній вектор з хедеру
+  // сховати-показати ВІДЕО-БЛОКИ
   let currentDate2 = new Date();
-  let targetDate2 = new Date("2023-07-29T21:00:00"); // субота 21:00
+  let targetDate2 = new Date("2023-08-17T14:37:00"); // субота 21:00
 
   if (currentDate2.getTime() >= targetDate2.getTime()) {
-    document.getElementById("video-1").style.display = "none";
-    document.getElementById("video-2").style.display = "none";
-    document.getElementById("video-3").style.display = "none";
+    // document.getElementById("video-1").style.display = "none";
+    // document.getElementById("video-2").style.display = "none";
+    document.getElementById("video-3").style.display = "block";
   }
 });
 
@@ -17,7 +17,7 @@ function updateTextBasedOnDateAndTime(currentDate, datePrices) {
     if (currentDate >= date) {
       text = price;
     } else {
-      break; 
+      break;
     }
   }
   return text;
@@ -51,7 +51,7 @@ element2.textContent = updateTextBasedOnDateAndTime(currentDate, psyhDates);
 const element3 = document.getElementById("todayMax");
 element3.textContent = updateTextBasedOnDateAndTime(currentDate, maxDates);
 
-// зняти закреслення з "Повна ціна *000 ₴" 
+// зняти закреслення з "Повна ціна *000 ₴"
 let currentDate1 = new Date();
 let targetDate = new Date("2023-07-30T21:00:00"); // ці дати ОДНАКОВІ
 if (currentDate1.getTime() >= targetDate.getTime()) {
@@ -66,59 +66,59 @@ if (currentDate1.getTime() >= targetDate.getTime()) {
 $( document ).ready(function() {
 
   $('.head').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated slideInUp', 
+    classToAdd: 'visible animated slideInUp',
     offset: '0%'
   });
   $('.right').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInRight', 
+    classToAdd: 'visible animated fadeInRight',
     offset: '0%'
   });
   $('.left').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInLeft', 
+    classToAdd: 'visible animated fadeInLeft',
     offset: '0%'
   });
   $('.up').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInUp', 
+    classToAdd: 'visible animated fadeInUp',
     offset: '20%'
   });
   $('.down').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInDown', 
+    classToAdd: 'visible animated fadeInDown',
     offset: '20%'
   });
   $('.in').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeIn', 
+    classToAdd: 'visible animated fadeIn',
     offset: '20%'
   });
   $('.bounce-in').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated bounceIn', 
+    classToAdd: 'visible animated bounceIn',
     offset: '20%'
   });
   $('.bounce-left').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated bounceInLeft', 
+    classToAdd: 'visible animated bounceInLeft',
     offset: '20%'
   });
   $('.bounce-right').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated bounceInRight', 
+    classToAdd: 'visible animated bounceInRight',
     offset: '20%'
   });
   $('.bounce-up').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated bounceInUp', 
+    classToAdd: 'visible animated bounceInUp',
     offset: '20%'
   });
   $('.bounce-down').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated bounceInDown', 
+    classToAdd: 'visible animated bounceInDown',
     offset: '20%'
   });
   $('.speaker-img').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated zoomIn', 
+    classToAdd: 'visible animated zoomIn',
     offset: '0%'
   });
   $('.bottom-info').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated rotateIn', 
+    classToAdd: 'visible animated rotateIn',
     offset: '20%'
   });
 
-  //фіксована кнопка desctop 
+  //фіксована кнопка desctop
   window.addEventListener('scroll', function() {
     let a = document.querySelector('.banner-float-btn');
     let priceBlock = document.getElementById('price');
@@ -130,7 +130,7 @@ $( document ).ready(function() {
     let bannerBlockTop = bannerBlock.offsetTop;
     let bannerBlockHeight = bannerBlock.offsetHeight;
     let bannerBlockBottom = bannerBlockTop + bannerBlockHeight;
-    
+
     //стає на місце при знаходженні на блоці "banner"
     if (scrollY < bannerBlockBottom) {
       a.style.position = 'static';
@@ -158,7 +158,7 @@ $( document ).ready(function() {
     event.preventDefault();
     let id = $(this).attr('href'),
       top = $(id).offset().top;
-  
+
     $('body,html').animate({
       scrollTop: top - -20
     }, 1500);
@@ -206,4 +206,4 @@ $( document ).ready(function() {
       }
     }]
   });
-}) 
+})
