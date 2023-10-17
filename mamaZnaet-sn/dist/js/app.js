@@ -193,7 +193,7 @@ Zepto(function($) {
       top = $(id).offset().top;
 
     $('body,html').animate({
-      scrollTop: top - 0
+      scrollTop: top - 50
     }, 1500);
   });
 
