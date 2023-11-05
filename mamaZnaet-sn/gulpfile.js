@@ -14,7 +14,7 @@ var uglify = require('gulp-uglify');
 var webp = require('gulp-webp');
 var uncss = require('gulp-uncss');
 var webserver = require('gulp-webserver');
- 
+
 gulp.task('serve', function() {
   gulp.src('dist')
    .pipe(webserver({
@@ -47,8 +47,9 @@ gulp.task('js', async function() {
 });
 gulp.task('js_v', async function() {
     gulp.src([
-            'src/js/vendor/jquery-3.6.3.min.js',
-            'src/js/vendor/slick.js'
+        'src/js/vendor/jquery-3.6.3.min.js',
+        'src/js/vendor/fancybox.js',
+        'src/js/vendor/slick.js'
         ])
         .pipe(concat('vendor.js'))
         .pipe(uglify())
