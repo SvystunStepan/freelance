@@ -12,51 +12,6 @@
   observer.observe();
 
 $( document ).ready(function() {
-/*
-  $('.up').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInUp',
-    offset: '20%'
-  });
-  $('.up-1').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-1 fadeInUp',
-    offset: '20%'
-  });
-  $('.up-2').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-2 fadeInUp',
-    offset: '20%'
-  });
-  $('.up-3').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-3 fadeInUp',
-    offset: '20%'
-  });
-  $('.right').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInRight',
-    offset: '20%'
-  });
-  $('.left').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInLeft',
-    offset: '20%'
-  });
-  $('.left-1').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-1 fadeInLeft',
-    offset: '20%'
-  });
-  $('.left-2').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-2 fadeInLeft',
-    offset: '20%'
-  });
-  $('.left-3').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-3 fadeInLeft',
-    offset: '20%'
-  });
-  $('.in, .img-block, .banner-img, .video-block').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-2 fadeIn',
-    offset: '30%'
-  });
-  $('.down').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-1 fadeInDownBig',
-    offset: '0%'
-  }); */
 
   // Scroll
   $('.scroll').click(function (e) {
