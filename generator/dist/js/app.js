@@ -8,11 +8,10 @@
    * @private
    */function f(t){t.setAttribute("data-loaded",!0)}var b=function(t){return"true"===t.getAttribute("data-loaded")};return function(){var r,o,a=0<arguments.length&&void 0!==arguments[0]?arguments[0]:".lozad",t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},e=g({},l,t),n=e.root,i=e.rootMargin,d=e.threshold,c=e.load,u=e.loaded,s=void 0;return window.IntersectionObserver&&(s=new IntersectionObserver((r=c,o=u,function(t,e){t.forEach(function(t){(0<t.intersectionRatio||t.isIntersecting)&&(e.unobserve(t.target),b(t.target)||(r(t.target),f(t.target),o(t.target)))})}),{root:n,rootMargin:i,threshold:d})),{observe:function(){for(var t=function(t){var e=1<arguments.length&&void 0!==arguments[1]?arguments[1]:document;return t instanceof Element?[t]:t instanceof NodeList?t:e.querySelectorAll(t)}(a,n),e=0;e<t.length;e++)b(t[e])||(s?s.observe(t[e]):(c(t[e]),f(t[e]),u(t[e])))},triggerLoad:function(t){b(t)||(c(t),f(t),u(t))},observer:s}}});
 
-   var observer = lozad();
+  var observer = lozad();
   observer.observe();
 
 $( document ).ready(function() {
-
   // Scroll
   $('.scroll').click(function (e) {
     event.preventDefault();
@@ -43,7 +42,6 @@ $( document ).ready(function() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          arrows: true,
           dots: true
         }
       },
@@ -52,7 +50,6 @@ $( document ).ready(function() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          arrows: true,
           dots: true
         }
       },
@@ -61,7 +58,6 @@ $( document ).ready(function() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
           dots: true
         }
       },
