@@ -66,4 +66,23 @@ $( document ).ready(function() {
     ]
   });
 
+// Отримати елемент, який містить дату
+var dateElement = document.getElementById("datePlaceholder");
+
+// Отримати сьогоднішню дату
+var today = new Date();
+
+// Додати 2 дні до сьогоднішньої дати
+today.setDate(today.getDate() + 2);
+
+// Отримати день, місяць і рік
+var day = today.getDate();
+var month = today.getMonth() + 1; // Місяці починаються з 0, тому додаємо 1
+var year = today.getFullYear();
+
+// Форматування дати у вигляді "день.місяць.рік"
+var formattedDate = day + "." + month + "." + year;
+
+// Замінити вміст елементу на нову дату
+dateElement.innerHTML = formattedDate;
 })
