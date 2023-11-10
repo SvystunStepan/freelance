@@ -4,10 +4,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0, width=device-width">
-  <meta name="description" content="TopGen генератор, який гарантує комфор у вашому будинку та аводиться з пульта">
+  <meta name="Title" content="TopGen" />
+  <meta name="description"
+    content="TopGen | TopGen генератор, який гарантує комфор у вашому будинку та заводиться з пульта" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description"
+    content="TopGen | TopGen генератор, який гарантує комфор у вашому будинку та заводиться з пульта" />
+  <meta property="og:url" content="" />
+  <meta property="og:sitename" content="TopGen" />
+  <meta property="og:title" content="TopGen">
+  <meta property="og:image" content="images/og.png" />
   <title>TopGen</title>
   <link type="text/css" rel="stylesheet" href="css/app.css?v=1.1">
   <link rel="shortcut icon" href="images/favicon.webp">
+  <style>
+    .form-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .4);
+      border-radius: 12px;
+      padding: 12px 16px;
+      gap: 16px;
+    }
+
+    .form-success svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    .form-success p {
+      color: #141414;
+      font-family: Montserrat-Bold, sans-serif;
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    .blackout .form-success {
+      flex-direction: column;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -84,7 +121,7 @@
               <div class="form-bg">
                 <h4 class="form-title">Придбай бензогенератор
                   Tiger&nbsp;EC&nbsp;-&nbsp;3500А по найкращій ціні вже сьогодні</h4>
-                <form>
+                <form method="post" class="form">
                   <div class="form-tel">
                     <input type="tel" name="phone" placeholder="Номер телефона" required="">
                   </div>
@@ -361,7 +398,7 @@
         <div class="order-form">
           <h4 class="form-title mobile">Придбай бензогенератор
             Tiger&nbsp;EC&nbsp;-&nbsp;3500А по найкращій ціні вже сьогодні</h4>
-          <form>
+          <form method="post" class="form">
             <div class="form-tel">
               <input type="tel" name="phone" placeholder="Номер телефона" required="">
             </div>

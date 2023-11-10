@@ -75,4 +75,35 @@ $( document ).ready(function() {
   let year = today.getFullYear();
   let formattedDate = day + "." + month + "." + year;
   dateElement.innerHTML = formattedDate;
+
+
+  // form
+  $('.form').on('submit', function (e) {
+    e.preventDefault();
+    var $form = $(this);
+    $form.find('.submit').addClass('inactive');
+    $form.find('.submit').prop('disabled', true);
+
+     $.ajax({
+        type: 'POST',
+        url: 'php/telegram.php',
+        dataType: 'json',
+        data: $form.serialize(),
+        success: function (response) {}
+      });
+
+    setTimeout(function () {
+      $form.find('.submit').removeClass('inactive');
+      $form.find('.submit').prop('disabled', false);
+      $form[0].reset();
+
+      $form.html(`
+        <div class="form-success">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" xml:space="preserve" fill="#25AE88"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#25AE88;" cx="25" cy="25" r="25"></circle> <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points=" 38,15 22,33 12,25 "></polyline> </g></svg>
+          <p>Заявка відправлена! Очікуйте, невдовзі з вами з'яжеться менеджер!</p>
+        </div>
+      `)
+    }, 1000);
+  });
+
 })
