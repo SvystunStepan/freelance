@@ -3,8 +3,7 @@
 /*ОТПРАВЛЯЕМ НА ПОЧТУ */
 $c = true;
 //- встановлює email адресу адміністратора
-// $admin_email = 'info@topgen.com.ua';
-$admin_email = 'info@svystunstepan.github.io';
+$admin_email = 'info@topgen.com.ua';
 //- встановлює email адресу, на яку буде відправлено лист
 // $to = 'irichman2010@gmail.com';
 $to = 's913ua@gmail.com';
