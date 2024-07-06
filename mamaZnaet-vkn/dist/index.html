@@ -52,12 +52,51 @@
     .head::before {
       display: none;
     }
+
+    .video-box {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      width: 31%;
+      margin: 0 auto;
+    }
+
+    .video-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0
+    }
+
+    @media screen and (max-width: 768px) {
+      .video-box {
+        position: relative;
+        padding-bottom: 120%;
+        width: 67%;
+        height: 100%;
+        overflow: hidden;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <div class="container video">
+    <div class="row">
+      <div class="col col-md-8 mx-auto">
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/ZoiAj33skIA?si=o4cjdQOfvtSXdw1k" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="container video" id="video-1">
+
+  <!-- <div class="container video" id="video-1">
     <h2 class="title"><span>ДЕНЬ 1.</span> ЧОМУ МИ КРИЧИМО НА ДІТЕЙ І ЯК ПОЗБУТИСЯ ЦЬОГО?</h2>
     <div class="row">
       <div class="col col-md-8 mx-auto">
@@ -92,7 +131,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <header class="head">
     <div class="container">

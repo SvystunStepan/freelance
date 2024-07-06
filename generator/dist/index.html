@@ -15,7 +15,7 @@
   <meta property="og:title" content="TopGen">
   <meta property="og:image" content="images/og.png" />
   <title>TopGen</title>
-  <link type="text/css" rel="stylesheet" href="css/app.css?v=1.1">
+  <link type="text/css" rel="stylesheet" href="css/app.css?v=1.2">
   <link rel="shortcut icon" href="images/favicon.webp">
   <style>
     .form-success {
@@ -81,14 +81,28 @@
         <a class="btn orange scroll" href="#order">Замовити генератор</a>
         <a class="btn scroll" href="#generator">Характеристика</a>
       </div>
-      <div class="np-block">
+      <!-- <div class="np-block">
         <img class="np-logo" loading="lazy" src="images/np-logo.webp" alt="New Post">
         <p class="np-text">безкоштовна доставка по всій Україні</p>
-      </div>
+      </div> -->
     </div>
   </header>
   <main>
-    <section class="line">
+    <section class="timer-price">
+      <div class="container">
+        <div class="flex-column">
+          <div class="timer">
+            <div class="flex-row">
+              <div class="hours chart"><span>00</span></div><span>:</span>
+              <div class="minutes chart"><span>00</span></div><span>:</span>
+              <div class="seconds chart"><span>00</span></div>
+            </div>
+          </div>
+          <h1 class="price"><span>6499&nbsp;<i>грн.</i></span></h1>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="line">
       <div class="container">
         <div class="line-block">
           <p class="line-text"><span>Встигни замовити до <i id="datePlaceholder">1.12.23</i> по&nbsp;ціні</span> <b>14
@@ -100,7 +114,7 @@
           <img class="bottle lozad" loading="lazy" src="images/bottle.webp" alt="oil">
         </div>
       </div>
-    </section>
+    </section> -->
     <div class="flex-position">
       <section class="blackout">
         <div class="container">
@@ -426,10 +440,19 @@
           <img src="images/logo.webp" alt="logotype">
           <h5 class="logo-name">TopGen</h5>
         </a>
-        <div class="copyright">2023 • Всі права захищені</div>
-        <div class="work-schedule">
-          <a class="tell" href="tel:+380988888888">098-88-88-888</a>
-          <p>Щодня з 9:00 до 20:00</p>
+        <ul class="info">
+          <li><a href="payment.html">Умови оплати</a></li>
+          <li><a href="delivery.html">Умови доставки</a></li>
+          <li><a href="warranty.html">Гарантія на товар</a></li>
+          <li><a href="povernennya-tovaru.html">Умови повернення товару</a></li>
+          <li><a href="licenses_detail.html">Політика конфіденційності</a></li>
+        </ul>
+        <div>
+          <div class="work-schedule">
+            <a class="tell" href="tel:+380988888888">098-88-88-888</a>
+            <p>Щодня з 9:00 до 20:00</p>
+          </div>
+          <div class="copyright">2023 • Всі права захищені</div>
         </div>
       </div>
     </div>

@@ -1,3 +1,42 @@
+//HEADER background
+document.addEventListener("DOMContentLoaded", function() {
+  let header = document.querySelector(".header");
+  let mobileBg = header.getAttribute("data-bg-mobile");
+  let tabBg = header.getAttribute("data-bg-tab");
+  let desktopBg = header.getAttribute("data-bg-desktop");
+
+  /* function lazyLoadBg(element) {
+    if (window.innerWidth <= 768 && mobileBg) {
+      element.style.backgroundImage = `url('${mobileBg}')`;
+    } else if (desktopBg) {
+      element.style.backgroundImage = `url('${desktopBg}')`;
+    }
+  } */
+  function lazyLoadBg(element) {
+    if (window.innerWidth <= 768 && mobileBg) {
+      element.style.backgroundImage = `url('${mobileBg}')`;
+    } else if (window.innerWidth > 768 && window.innerWidth <= 991 && tabBg) {
+      element.style.backgroundImage = `url('${tabBg}')`;
+    } else if (desktopBg) {
+      element.style.backgroundImage = `url('${desktopBg}')`;
+    }
+  }
+
+
+  // Використання Intersection Observer для завантаження фонового зображення при його входженні в область видимості
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        lazyLoadBg(entry.target);
+        observer.unobserve(entry.target); // Зупиняємо спостереження для цього елемента після завантаження
+      }
+    });
+  });
+
+  // Додаємо блок .header до Intersection Observer
+  observer.observe(header);
+});
+
 
 /*! lozad.js - v1.9.0 - 2019-02-09
 * https://github.com/ApoorvSaxena/lozad.js
@@ -47,107 +86,6 @@ Zepto(function($) {
 });
 
 $( document ).ready(function() {
-/*
-  // $('.head').addClass("hidden_animation").viewportChecker({
-  //   classToAdd: 'visible animated slideInUp',
-  //   offset: '0%'
-  // });
-  $('.header-img, .speaker-img, .in-img, .reviews-img').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated zoomIn',
-    offset: '30%'
-  });
-  $('.up-head').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInUp',
-    offset: '0%'
-  });
-  $('.up-head-1').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-1 fadeInUp',
-    offset: '0%'
-  });
-  $('.up').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInUp',
-    offset: '20%'
-  });
-  $('.up-1').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-1 fadeInUp',
-    offset: '20%'
-  });
-  $('.up-2').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-2 fadeInUp',
-    offset: '20%'
-  });
-  $('.up-3').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-3 fadeInUp',
-    offset: '20%'
-  });
-  $('.up-4').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-4 fadeInUp',
-    offset: '20%'
-  });
-  $('.up-5').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-5 fadeInUp',
-    offset: '0%'
-  });
-  $('.down').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInDown',
-    offset: '0%'
-  });
-  $('.right, .top-10-block').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInRight',
-    offset: '20%'
-  });
-  $('.right-1').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-1 fadeInRight',
-    offset: '20%'
-  });
-  $('.right-2').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-2 fadeInRight',
-    offset: '20%'
-  });
-  $('.left').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated fadeInLeft',
-    offset: '20%'
-  });
-  // $('.left-1').addClass("hidden_animation").viewportChecker({
-  //   classToAdd: 'visible animated-1 fadeInLeft',
-  //   offset: '20%'
-  // });
-  // $('.left-2').addClass("hidden_animation").viewportChecker({
-  //   classToAdd: 'visible animated-2 fadeInLeft',
-  //   offset: '20%'
-  // });
-  // $('.flip').addClass("hidden_animation").viewportChecker({
-  //   classToAdd: 'visible animated flipInY',
-  //   offset: '20%'
-  // });
-  $('.in').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-3 fadeIn',
-    offset: '30%'
-  });
-  // $('.bounce-in').addClass("hidden_animation").viewportChecker({
-  //   classToAdd: 'visible animated bounceIn',
-  //   offset: '20%'
-  // });
-  $('.bounce-left').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-3 bounceInLeft',
-    offset: '20%'
-  });
-  $('.bounce-right').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated-3 bounceInRight',
-    offset: '20%'
-  });
-  // $('.bounce-up').addClass("hidden_animation").viewportChecker({
-  //   classToAdd: 'visible animated bounceInUp',
-  //   offset: '20%'
-  // });
-  // $('.bounce-down').addClass("hidden_animation").viewportChecker({
-  //   classToAdd: 'visible animated bounceInDown',
-  //   offset: '20%'
-  // });
-  $('.results').addClass("hidden_animation").viewportChecker({
-    classToAdd: 'visible animated rotateIn',
-    offset: '30%'
-  }); */
 
   // Scroll
   $('.scroll').click(function (e) {
@@ -242,39 +180,41 @@ $( document ).ready(function() {
   });
 
 
-  //PRICE-TIMER
-  const hoursDisplay = document.querySelector('.hours');
-  const minutesDisplay = document.querySelector('.minutes');
-  const secondsDisplay = document.querySelector('.seconds');
+
+  //ТАЙМЕР ЦІНИ
+  const timers = document.querySelectorAll('.timer');
+
+  timers.forEach((timer, index) => {
+  const hoursDisplay = timer.querySelector('.hours');
+  const minutesDisplay = timer.querySelector('.minutes');
+  const secondsDisplay = timer.querySelector('.seconds');
 
   function getTimeUntilMidnight() {
-      const now = new Date();
-      const midnight = new Date(now);
-      midnight.setHours(24, 0, 0, 0); // Set to next midnight
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
 
-      const timeDifference = midnight - now;
-      return Math.floor(timeDifference / 1000); // Convert to seconds
+    const timeDifference = midnight - now;
+    return Math.floor(timeDifference / 1000);
   }
 
   let remainingTime = getTimeUntilMidnight();
-
   function updateTimerDisplay() {
-      const hours = Math.floor(remainingTime / 3600);
-      const minutes = Math.floor((remainingTime % 3600) / 60);
-      const seconds = remainingTime % 60;
+    const hours = Math.floor(remainingTime / 3600);
+    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const seconds = remainingTime % 60;
 
-      hoursDisplay.textContent = hours.toString().padStart(2, '0');
-      minutesDisplay.textContent = minutes.toString().padStart(2, '0');
-      secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+    hoursDisplay.textContent = hours.toString().padStart(2, '0');
+    minutesDisplay.textContent = minutes.toString().padStart(2, '0');
+    secondsDisplay.textContent = seconds.toString().padStart(2, '0');
   }
-
   function updateTimer() {
-      if (remainingTime > 0) {
-          remainingTime--;
-          updateTimerDisplay();
-      }
+    if (remainingTime > 0) {
+      remainingTime--;
+      updateTimerDisplay();
+    }
   }
-  // Update the timer every second
-  setInterval(updateTimer, 1000);
+    setInterval(updateTimer, 1000);
+  });
 
 })

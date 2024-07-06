@@ -67,14 +67,51 @@ $( document ).ready(function() {
   });
 
   //зміна дати +2дні
-  let dateElement = document.getElementById("datePlaceholder");
+  /* let dateElement = document.getElementById("datePlaceholder");
   let today = new Date();
   today.setDate(today.getDate() + 2);
   let day = today.getDate();
   let month = today.getMonth() + 1;
   let year = today.getFullYear();
   let formattedDate = day + "." + month + "." + year;
-  dateElement.innerHTML = formattedDate;
+  dateElement.innerHTML = formattedDate; */
+
+
+  //ТАЙМЕР ЦІНИ 24год
+  const timers = document.querySelectorAll('.timer');
+
+  timers.forEach((timer, index) => {
+  const hoursDisplay = timer.querySelector('.hours');
+  const minutesDisplay = timer.querySelector('.minutes');
+  const secondsDisplay = timer.querySelector('.seconds');
+
+  function getTimeUntilMidnight() {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+
+    const timeDifference = midnight - now;
+    return Math.floor(timeDifference / 1000);
+  }
+
+  let remainingTime = getTimeUntilMidnight();
+  function updateTimerDisplay() {
+    const hours = Math.floor(remainingTime / 3600);
+    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const seconds = remainingTime % 60;
+
+    hoursDisplay.textContent = hours.toString().padStart(2, '0');
+    minutesDisplay.textContent = minutes.toString().padStart(2, '0');
+    secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+  }
+  function updateTimer() {
+    if (remainingTime > 0) {
+      remainingTime--;
+      updateTimerDisplay();
+    }
+  }
+    setInterval(updateTimer, 1000);
+  });
 
 
   // form
@@ -105,5 +142,6 @@ $( document ).ready(function() {
       `)
     }, 1000);
   });
+
 
 })
