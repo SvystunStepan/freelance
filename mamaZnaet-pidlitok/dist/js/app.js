@@ -42,6 +42,40 @@ Zepto(function($) {
   })
 });
 
+
+// POPUP-вікно(fancybox) для 3-ох різних кнопок ---ПОЧАТОК---
+function selectTariff(tariff, ...hideBlocks) {
+  const popup = document.getElementById('popup');
+  const blocksToHide = ['btn-1', 'btn-2', 'btn-3'];
+  
+  blocksToHide.forEach(block => {
+    document.querySelectorAll(`.${block}`).forEach(element => {
+      element.style.display = hideBlocks.includes(block) ? 'none' : 'block';
+    });
+  });
+  
+  // Відкриття popup (для прикладу використано Fancybox, змініть при необхідності)
+  $.fancybox.open({
+    src: '#popup',
+    type: 'inline',
+    opts: {
+          afterClose: function() {
+            // Закриття залишкових елементів після закриття
+            $.fancybox.destroy();
+          }
+        }
+      });
+    }
+    
+    // Переконатися, що всі елементи Fancybox закриті під час завантаження сторінки
+    $(document).ready(function() {
+      $.fancybox.destroy();
+    });
+    // POPUP-вікно(fancybox) для 3-ох різних кнопок ---КІНЕЦЬ---
+
+
+
+
  $( document ).ready(function() {
 
   // Burger-main
@@ -134,7 +168,7 @@ Zepto(function($) {
   // Функція для зміни стилів активного елемента
   const setActiveStyle = (index) => {
     // Спочатку змінимо стилі всіх елементів .bg-arrow
-    textColor1.forEach((textColor1, i) => {
+    /* textColor1.forEach((textColor1, i) => {
       if (i === index) {
         textColor1.style.color = "#fff";
       } else {
@@ -148,13 +182,13 @@ Zepto(function($) {
       } else {
         textColor2.style.color = "#222";
       }
-    });
+    }); */
 
     bgArrows.forEach((bgArrow, i) => {
       if (i === index) {
-        bgArrow.style.backgroundColor = "#7454F1";
+        bgArrow.style.backgroundColor = "#DAE5FD";
       } else {
-        bgArrow.style.backgroundColor = "#fff";
+        bgArrow.style.backgroundColor = "#F0F5FE";
       }
     });
 
@@ -187,39 +221,41 @@ Zepto(function($) {
   });
 
 
-  //ТАЙМЕР ЦІНИ
+  //ТАЙМЕР ЦІНИ ДО ПЕВНОЇ ДАТИ
   const timers = document.querySelectorAll('.timer');
 
-  timers.forEach((timer, index) => {
-  const hoursDisplay = timer.querySelector('.hours');
-  const minutesDisplay = timer.querySelector('.minutes');
-  const secondsDisplay = timer.querySelector('.seconds');
+  timers.forEach((timer) => {
+    const targetDate = new Date(timer.getAttribute('data-date'));
 
-  function getTimeUntilMidnight() {
-    const now = new Date();
-    const midnight = new Date(now);
-    midnight.setHours(24, 0, 0, 0);
+    const daysDisplay = timer.querySelector('.days span');
+    const hoursDisplay = timer.querySelector('.hours span');
+    const minutesDisplay = timer.querySelector('.minutes span');
+    const secondsDisplay = timer.querySelector('.seconds span');
 
-    const timeDifference = midnight - now;
-    return Math.floor(timeDifference / 1000);
-  }
+    function updateTimer() {
+      const now = new Date();
+      const timeDifference = targetDate - now;
 
-  let remainingTime = getTimeUntilMidnight();
-  function updateTimerDisplay() {
-    const hours = Math.floor(remainingTime / 3600);
-    const minutes = Math.floor((remainingTime % 3600) / 60);
-    const seconds = remainingTime % 60;
+      if (timeDifference <= 0) {
+          daysDisplay.textContent = '00';
+          hoursDisplay.textContent = '00';
+          minutesDisplay.textContent = '00';
+          secondsDisplay.textContent = '00';
+          return;
+      }
 
-    hoursDisplay.textContent = hours.toString().padStart(2, '0');
-    minutesDisplay.textContent = minutes.toString().padStart(2, '0');
-    secondsDisplay.textContent = seconds.toString().padStart(2, '0');
-  }
-  function updateTimer() {
-    if (remainingTime > 0) {
-      remainingTime--;
-      updateTimerDisplay();
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      daysDisplay.textContent = days.toString().padStart(2, '0');
+      hoursDisplay.textContent = hours.toString().padStart(2, '0');
+      minutesDisplay.textContent = minutes.toString().padStart(2, '0');
+      secondsDisplay.textContent = seconds.toString().padStart(2, '0');
     }
-  }
+
+    updateTimer();
     setInterval(updateTimer, 1000);
   });
 
