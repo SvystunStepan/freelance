@@ -80,13 +80,19 @@
 </head>
 
 <body>
+  <div class="running-line">
+    <article class="roller">
+      <span>ЗАРАЗ&nbsp;ДІЄ&nbsp;ЗНИЖКА</span>
+    </article>
+  </div>
+
   <header class="header">
     <div class="container">
 
       <nav class="nav">
         <div class="nav-logo">
           <a href="index.html">
-            <img class="logo" loading="lazy" src="images/logo.webp" alt="">
+            <img class="logo" loading="lazy" src="images/logo.webp" alt="image">
           </a>
         </div>
         <div class="burger order-2 order-lg-1">
@@ -103,7 +109,6 @@
               <li><a href="https://t.me/School_Mama_Znaet"  class="link"  target="_blank">Звʼязатись з адміністратором?</a></li>
               <!-- <li><a href="tel:+380637043711" class="link tell">+38 063 70 43 711</a></li> -->
               <li><a href="#price" class="btn scroll">Записатися на курс</a></li>
-              </li>
             </ul>
           </div>
         </div>
@@ -114,7 +119,7 @@
           <div class="flex-left">
             <div class="block">
               <img class="header-small-img laptop" loading="lazy" src="images/img-1.webp" alt="laptop">
-              <div class="header-text">4-х тижневий онлайн-курс для батьків із дітьми <span>від 9 до 18 років</span></div>
+              <div class="header-text">4-х тижневий онлайн-курс для батьків із дітьми <span>від 9 до 15 років</span></div>
             </div>
             <div class="block">
               <img class="header-small-img calendar" loading="lazy" src="images/img-2.webp" alt="calendar">
@@ -149,8 +154,8 @@
           </div>
         </div>
         <div class="col-lg-6 mx-auto px-0">
-          <img class="autor-img-mob lozad" loading="lazy" src="images/header-bg-mob.webp" alt="">
-          <img class="autor-img-mob-1 lozad" loading="lazy" src="images/header-bg-mob-1.webp" alt="">
+          <img class="autor-img-mob lozad" loading="lazy" src="images/header-bg-mob.webp" alt="image">
+          <img class="autor-img-mob-1 lozad" loading="lazy" src="images/header-bg-mob-1.webp" alt="image">
         </div>
 
       </div>
@@ -406,12 +411,9 @@
             <div class="old">Повна ціна <s>6&nbsp;000&nbsp;грн</s></div>
             <div class="new-price">2499&nbsp;грн</div>
             <div class="btn-box">
-              <!-- <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('samostijnyj')">Оплатити курс</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('samostijnyj1')">Передоплату 50%</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('samostijnyj')">Розстрочка 3-6 міс.</a> -->
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('samostijnyj', 'btn-2', 'btn-3')">Оплатити курс</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('samostijnyj1', 'btn-3')">Передоплату 50%</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('samostijnyj', 'btn-1', 'btn-2')">Розстрочка 3-6 міс.</a>
+              <a data-fancybox="" data-src="#popup1" class="btn" onclick="selectTariff('samostijnyj', 'paymentForm')">Оплатити курс</a>
+              <a data-fancybox="" data-src="#popup2" class="btn" onclick="selectTariff('samostijnyj1', 'paymentForm2')">Передоплату 50%</a>
+              <a data-fancybox="" data-src="#popup3" class="btn" onclick="selectTariff('samostijnyj', 'paymentForm3')">Розстрочка 3-6 міс.</a>
             </div>
           </div>
 
@@ -435,12 +437,9 @@
             <div class="old">Повна ціна <s>8&nbsp;000&nbsp;грн</s></div>
             <div class="new-price">3499&nbsp;грн</div>
             <div class="btn-box">
-              <!-- <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('psyholog')">Оплатити курс</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('psyholog1')">Передоплату 50%</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('psyholog')">Розстрочка 3-6 міс.</a> -->
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('psyholog', 'btn-2', 'btn-3')">Оплатити курс</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('psyholog1', 'btn-3')">Передоплату 50%</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('psyholog', 'btn-1', 'btn-2')">Розстрочка 3-6 міс.</a>
+              <a data-fancybox="" data-src="#popup1" class="btn" onclick="selectTariff('psyholog', 'paymentForm')">Оплатити курс</a>
+              <a data-fancybox="" data-src="#popup2" class="btn" onclick="selectTariff('psyholog1', 'paymentForm2')">Передоплату 50%</a>
+              <a data-fancybox="" data-src="#popup3" class="btn" onclick="selectTariff('psyholog', 'paymentForm3')">Розстрочка 3-6 міс.</a>
             </div>
           </div>
 
@@ -459,17 +458,16 @@
               <li><span>Блок 5.</span> Про що не розповідають в школі</li>
               <li><span>Зворотній зв'язок</span> по уроках від професійного психолога (текстом)</li>
               <li><span>Можливість ставити запитання</span> професійному психологу (текстом)</li>
+              <li><span>Бонус 1.</span> Онлайн марафон «Спокійна Мама»</li>
+              <li><span>Бонус 2.</span> Онлайн курс «Стоп Гаджети»</li>
               <li><span>4 сесії розборів ситуацій</span> учасників від Анни Просветової</li>
             </ul>
             <div class="old">Повна ціна <s>10&nbsp;000&nbsp;грн</s></div>
             <div class="new-price">4499&nbsp;грн</div>
             <div class="btn-box">
-              <!-- <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('maximalnyj')">Оплатити курс</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('maximalnyj1')">Передоплату 50%</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('maximalnyj')">Розстрочка 3-6 міс.</a> -->
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('maximalnyj', 'btn-2', 'btn-3')">Оплатити курс</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('maximalnyj1', 'btn-3')">Передоплату 50%</a>
-              <a data-fancybox="" data-src="#popup" class="btn" onclick="selectTariff('maximalnyj', 'btn-1', 'btn-2')">Розстрочка 3-6 міс.</a>
+              <a data-fancybox="" data-src="#popup1" class="btn" onclick="selectTariff('maximalnyj', 'paymentForm')">Оплатити курс</a>
+              <a data-fancybox="" data-src="#popup2" class="btn" onclick="selectTariff('maximalnyj1', 'paymentForm2')">Передоплату 50%</a>
+              <a data-fancybox="" data-src="#popup3" class="btn" onclick="selectTariff('maximalnyj', 'paymentForm3')">Розстрочка 3-6 міс.</a>
             </div>
           </div>
         </div>
@@ -553,13 +551,13 @@
     <section class="speaker-tv">
       <h2 class="section-title"><span>Анна</span> - частий гість на телебаченні в&nbsp;ролі експерта з&nbsp;сімейних випадків</h2>
       <div class="speaker-slider" id="slider1">
-        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-34-50.webp" alt=""></div>
-        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-03.webp" alt=""></div>
-        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-13.webp" alt=""></div>
-        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-23.webp" alt=""></div>
-        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-45.webp" alt=""></div>
-        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-58.webp" alt=""></div>
-        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-37-07.webp" alt=""></div>
+        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-34-50.webp" alt="image"></div>
+        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-03.webp" alt="image"></div>
+        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-13.webp" alt="image"></div>
+        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-23.webp" alt="image"></div>
+        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-45.webp" alt="image"></div>
+        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-36-58.webp" alt="image"></div>
+        <div class="item"><img class="lozad" loading="lazy" src="images/photo_2020-06-17_14-37-07.webp" alt="image"></div>
       </div>
     </section>
 
@@ -568,12 +566,12 @@
         <div class="row">
           <div class="col-10 mx-auto in">
             <div class="smi-list" id="slider2">
-              <div class="item"><img class="lozad" loading="lazy" src="images/stb.webp" alt=""></div>
-              <div class="item"><img class="lozad" loading="lazy" src="images/newsone.webp" alt=""></div>
-              <div class="item"><img class="lozad" loading="lazy" src="images/ukr.webp" alt=""></div>
-              <div class="item"><img class="lozad" loading="lazy" src="images/prjamyj.webp" alt=""></div>
-              <div class="item"><img class="lozad" loading="lazy" src="images/etcetera.webp" alt=""></div>
-              <div class="item"><img class="lozad" loading="lazy" src="images/promum.webp" alt=""></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/stb.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/newsone.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/ukr.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/prjamyj.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/etcetera.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/promum.webp" alt="image"></div>
             </div>
           </div>
         </div>
@@ -582,22 +580,22 @@
 
     <section class="reviews" id="reviews">
       <div class="container">
-        <h2 class="section-title"><span>Відгуки учасників,</span> які проходять програми в школі <span>«Мама Знає»</span></span></h2>
+        <h2 class="section-title"><span>Відгуки учасників,</span> які проходять програми в школі <span>«Мама Знає»</span></h2>
         <div class="title-item">Ось відгуки деяких із них:</div>
 
         <div class="row justify-content-center">
           <div class="col-11 col-md-11 right-2">
             <div class="reviews-slider mx-auto" id="slider3">
 
-              <img class="lozad" loading="lazy" src="images/reviews-5.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-0.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-6.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-1.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-2.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-3.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-4.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-7.webp" alt="">
-              <img class="lozad" loading="lazy" src="images/reviews-8.webp" alt="">
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-5.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-0.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-6.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-1.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-2.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-3.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-4.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-7.webp" alt="image"></div>
+              <div class="item"><img class="lozad" loading="lazy" src="images/reviews-8.webp" alt="image"></div>
 
             </div>
           </div>
@@ -634,7 +632,7 @@
               <button class="accordion">Скільки часу займає проходження курсу? <span class="bg-arrow"><i
                     class="arrow"></i></span></button>
               <div class="accordion-content">
-                <p class="text tc">Тривалість курсу становить 4 тижні. Однак доступ до матеріалів курсу у вас зберігатиметься протягом 6 або 12 місяців після завершення в залежності від пакету участі. Це дає змогу вам повернутися до будь-якого уроку для повторення або поглибленого вивчення матеріалу.</p>
+                <p class="text tc">Тривалість курсу становить 4 тижні. Однак доступ до матеріалів у вас зберігатиметься протягом 6 або 12 місяців після завершення курсу в залежності від пакету участі. Це дає змогу вам повернутися до будь-якого уроку для повторення або поглибленого вивчення матеріалу.</p>
               </div>
             </div>
 
@@ -658,7 +656,7 @@
         <div class="col-lg-2">
           <div class="flex-left">
             <a href="index.html">
-              <img class="logo" loading="lazy" src="images/logo.webp" alt="">
+              <img class="logo" loading="lazy" src="images/logo.webp" alt="image">
             </a>
           </div>
         </div>
@@ -674,9 +672,9 @@
           <div class="flex-inline">
             <div>
               <a href="https://t.me/School_Mama_Znaet" class="mess" target="_blank">
-                <img loading="lazy" src="images/tg.svg" alt=""></a>
+                <img loading="lazy" src="images/tg.svg" alt="image"></a>
               <a href="viber://chat?number=%2B380637043711" class="mess viber" target="_blank">
-                <img loading="lazy" src="images/viber.svg" alt=""></a>
+                <img loading="lazy" src="images/viber.svg" alt="image"></a>
             </div>
             <ul>
               <li><a href="tel:+380637043711" class="tell">+38 063 70 43 711</a></li>
@@ -690,12 +688,49 @@
     </div>
   </footer>
 
-  <div id="popup" style="display: none">
+
+
+  <!--  -->
+  <div id="popup1" style="display: none">
     <h2 class="form-title btn-1">Заповніть форму</h2>
     <h3 class="form-subtitle btn-1">Переконайтеся, що дані вказали без помилок</h3>
-
+    <form payment="wfp" id="paymentForm">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name1" name="name" required />
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone1" name="phone" required />
+      <label for="email">Ел.пошта</label>
+      <input type="email" id="email1" name="email" required />
+      <button type="submit" class="btn">Відправити заявку</button>
+      <label for="agree">Натискаючи на кнопку я погоджуюсь з <br>
+        <a href="https://mamaznaet.pro/publichna-oferta" target="_blank">Договором оферти</a>,
+        <a href="https://mamaznaet.pro/politika-konfidencijnosti" target="_blank">Політикою конфіденційності</a>,
+        <a href="https://mamaznaet.pro/zgoda-na-rozsilku" target="_blank">Обробкою персональних даних</a>
+      </label>
+    </form>
+  </div>
+  <!--  -->
+  <div id="popup2" style="display: none">
+    <h2 class="form-title btn-1">Заповніть форму</h2>
+    <h3 class="form-subtitle btn-1">Переконайтеся, що дані вказали без помилок</h3>
     <div class="form-subtitle btn-2">* Другу частину 50% потрібно внести через 10 днів після старту курсу</div>
-
+    <form payment="wfp" id="paymentForm2">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name2" name="name" required />
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone2" name="phone" required />
+      <label for="email">Ел.пошта</label>
+      <input type="email" id="email2" name="email" required />
+      <button type="submit" class="btn">Відправити заявку</button>
+      <label for="agree">Натискаючи на кнопку я погоджуюсь з <br>
+        <a href="https://mamaznaet.pro/publichna-oferta" target="_blank">Договором оферти</a>,
+        <a href="https://mamaznaet.pro/politika-konfidencijnosti" target="_blank">Політикою конфіденційності</a>,
+        <a href="https://mamaznaet.pro/zgoda-na-rozsilku" target="_blank">Обробкою персональних даних</a>
+      </label>
+    </form>
+  </div>
+<!--  -->
+  <div id="popup3" style="display: none">
     <div class="btn-3">
       <h2 class="form-title">ІНСТРУКЦІЯ</h2>
       <ul>
@@ -706,17 +741,14 @@
         <li>Підтвердіть оплату</li>
       </ul>
     </div>
-
-    <form payment="wfp" id="paymentForm">
+    <form payment="wfp" id="paymentForm3">
+      <!-- <form payment="wfp" id="paymentFormHeader" data-name="standart"></form> -->
       <label for="name">Ім'я:</label>
-      <input type="text" id="name" name="name" required />
-
+      <input type="text" id="name3" name="name" required />
       <label for="phone">Телефон:</label>
-      <input type="tel" id="phone" name="phone" required />
-
+      <input type="tel" id="phone3" name="phone" required />
       <label for="email">Ел.пошта</label>
-      <input type="email" id="email" name="email" required />
-
+      <input type="email" id="email3" name="email" required />
       <button type="submit" class="btn">Відправити заявку</button>
       <label for="agree">Натискаючи на кнопку я погоджуюсь з <br>
         <a href="https://mamaznaet.pro/publichna-oferta" target="_blank">Договором оферти</a>,
@@ -729,9 +761,12 @@
   <script>
     // Функція для вказування назви тарифу в атрибутах форми.
     // Потрібна, якщо використовується одна форма на всі тарифи разом з onclick-атрибутом у кнопці виклику форми (вибору тарифу)
-    function selectTariff(name) {
-      document.getElementById("paymentForm").dataset.name = name;
+    function selectTariff(name, formId) {
+      document.getElementById(formId).dataset.name = name;
     }
+    /* function selectTariff(name) {
+      document.querySelector('[data-name="paymentForm"]').dataset.name = name;
+    } */
   </script>
   <script>
     const formAppendData = {
@@ -744,7 +779,7 @@
         stage: "1",
         upstage: "7",
         title: "На одній хвилі з підлітком — Самостійний",
-        redirect: "https://sd.mamaznaet.pro/thx3",
+        redirect: "https://teen.mamaznaet.pro/thx",
       },
       samostijnyj1: {
         value: 1250,
@@ -754,7 +789,7 @@
         stage: "1",
         upstage: "6",
         title: "На одній хвилі з підлітком — Самостійний передоплата",
-        redirect: "https://sd.mamaznaet.pro/thx3",
+        redirect: "https://teen.mamaznaet.pro/thx",
       },
       //назва пакету "З психологом" ↓
       psyholog: {
@@ -765,7 +800,7 @@
         stage: "1",
         upstage: "7",
         title: "На одній хвилі з підлітком — З психологом",
-        redirect: "https://sd.mamaznaet.pro/thx3",
+        redirect: "https://teen.mamaznaet.pro/thx",
       },
       psyholog1: {
         value: 1750,
@@ -775,7 +810,7 @@
         stage: "1",
         upstage: "6",
         title: "На одній хвилі з підлітком — З психологом передоплата",
-        redirect: "https://sd.mamaznaet.pro/thx3",
+        redirect: "https://teen.mamaznaet.pro/thx",
       },
       //назва пакету "МАКСИМАЛЬНИЙ" ↓
       maximalnyj: {
@@ -786,7 +821,7 @@
         stage: "1",
         upstage: "7",
         title: "На одній хвилі з підлітком — Максимальний",
-        redirect: "https://sd.mamaznaet.pro/thx3",
+        redirect: "https://teen.mamaznaet.pro/thx",
       },
       maximalnyj1: {
         value: 2250,
@@ -796,7 +831,7 @@
         stage: "1",
         upstage: "6",
         title: "На одній хвилі з підлітком — Максимальний передоплата",
-        redirect: "https://sd.mamaznaet.pro/thx3",
+        redirect: "https://teen.mamaznaet.pro/thx",
       },
     };
     function sendPayForm(form) {
@@ -879,8 +914,8 @@
   <script type="text/javascript"
     src="https://cdn.jsdelivr.net/combine/npm/zepto@1.2.0/dist/zepto.js,npm/zepto@1.2.0/src/fx.js?ver=5.3.2"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.js?ver=5.3.2"></script>
-  <script defer src="js/vendor.js?v=2"></script>
-  <script defer src="js/app.js?v=2"></script>
+  <script src="js/vendor.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
 </body>
 
 </html>

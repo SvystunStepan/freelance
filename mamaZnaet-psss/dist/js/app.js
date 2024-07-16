@@ -42,40 +42,6 @@ Zepto(function($) {
   })
 });
 
-
-/* // POPUP-вікно(fancybox) для 3-ох різних кнопок ---ПОЧАТОК---
-function selectTariff(tariff, ...hideBlocks) {
-  const popup = document.getElementById('popup');
-  const blocksToHide = ['btn-1', 'btn-2', 'btn-3'];
-  
-  blocksToHide.forEach(block => {
-    document.querySelectorAll(`.${block}`).forEach(element => {
-      element.style.display = hideBlocks.includes(block) ? 'none' : 'block';
-    });
-  });
-  
-  // Відкриття popup (для прикладу використано Fancybox, змініть при необхідності)
-  $.fancybox.open({
-    src: '#popup',
-    type: 'inline',
-    opts: {
-          afterClose: function() {
-            // Закриття залишкових елементів після закриття
-            $.fancybox.destroy();
-          }
-        }
-      });
-    }
-    
-    // Переконатися, що всі елементи Fancybox закриті під час завантаження сторінки
-    $(document).ready(function() {
-      $.fancybox.destroy();
-    });
-    // POPUP-вікно(fancybox) для 3-ох різних кнопок ---КІНЕЦЬ--- */
-
-
-
-
  $( document ).ready(function() {
 
   // Burger-main
@@ -142,11 +108,10 @@ function selectTariff(tariff, ...hideBlocks) {
 
   //слайдер відгуків
   $('#slider3').slick({
-    lazyLoad: 'ondemand',
     dots: false,
     speed: 1000,
     slidesToShow: 3,
-    // adaptiveHeight: true,//
+    adaptiveHeight: true,
     arrows: true,
     responsive: [{
       breakpoint: 768,
@@ -169,7 +134,7 @@ function selectTariff(tariff, ...hideBlocks) {
   // Функція для зміни стилів активного елемента
   const setActiveStyle = (index) => {
     // Спочатку змінимо стилі всіх елементів .bg-arrow
-    /* textColor1.forEach((textColor1, i) => {
+    textColor1.forEach((textColor1, i) => {
       if (i === index) {
         textColor1.style.color = "#fff";
       } else {
@@ -183,13 +148,13 @@ function selectTariff(tariff, ...hideBlocks) {
       } else {
         textColor2.style.color = "#222";
       }
-    }); */
+    });
 
     bgArrows.forEach((bgArrow, i) => {
       if (i === index) {
-        bgArrow.style.backgroundColor = "#DAE5FD";
+        bgArrow.style.backgroundColor = "#7454F1";
       } else {
-        bgArrow.style.backgroundColor = "#F0F5FE";
+        bgArrow.style.backgroundColor = "#fff";
       }
     });
 
@@ -222,41 +187,39 @@ function selectTariff(tariff, ...hideBlocks) {
   });
 
 
-  //ТАЙМЕР ЦІНИ ДО ПЕВНОЇ ДАТИ
+  //ТАЙМЕР ЦІНИ
   const timers = document.querySelectorAll('.timer');
 
-  timers.forEach((timer) => {
-    const targetDate = new Date(timer.getAttribute('data-date'));
+  timers.forEach((timer, index) => {
+  const hoursDisplay = timer.querySelector('.hours');
+  const minutesDisplay = timer.querySelector('.minutes');
+  const secondsDisplay = timer.querySelector('.seconds');
 
-    const daysDisplay = timer.querySelector('.days span');
-    const hoursDisplay = timer.querySelector('.hours span');
-    const minutesDisplay = timer.querySelector('.minutes span');
-    const secondsDisplay = timer.querySelector('.seconds span');
+  function getTimeUntilMidnight() {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
 
-    function updateTimer() {
-      const now = new Date();
-      const timeDifference = targetDate - now;
+    const timeDifference = midnight - now;
+    return Math.floor(timeDifference / 1000);
+  }
 
-      if (timeDifference <= 0) {
-          daysDisplay.textContent = '00';
-          hoursDisplay.textContent = '00';
-          minutesDisplay.textContent = '00';
-          secondsDisplay.textContent = '00';
-          return;
-      }
+  let remainingTime = getTimeUntilMidnight();
+  function updateTimerDisplay() {
+    const hours = Math.floor(remainingTime / 3600);
+    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const seconds = remainingTime % 60;
 
-      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-      daysDisplay.textContent = days.toString().padStart(2, '0');
-      hoursDisplay.textContent = hours.toString().padStart(2, '0');
-      minutesDisplay.textContent = minutes.toString().padStart(2, '0');
-      secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+    hoursDisplay.textContent = hours.toString().padStart(2, '0');
+    minutesDisplay.textContent = minutes.toString().padStart(2, '0');
+    secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+  }
+  function updateTimer() {
+    if (remainingTime > 0) {
+      remainingTime--;
+      updateTimerDisplay();
     }
-
-    updateTimer();
+  }
     setInterval(updateTimer, 1000);
   });
 
