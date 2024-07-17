@@ -111,7 +111,7 @@ Zepto(function($) {
     dots: false,
     speed: 1000,
     slidesToShow: 3,
-    adaptiveHeight: true,
+    // adaptiveHeight: true,
     arrows: true,
     responsive: [{
       breakpoint: 768,
@@ -152,9 +152,9 @@ Zepto(function($) {
 
     bgArrows.forEach((bgArrow, i) => {
       if (i === index) {
-        bgArrow.style.backgroundColor = "#7454F1";
+        bgArrow.style.backgroundColor = "#609F7B";
       } else {
-        bgArrow.style.backgroundColor = "#fff";
+        bgArrow.style.backgroundColor = "#F4F6FB";
       }
     });
 
